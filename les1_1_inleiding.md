@@ -203,8 +203,11 @@ https://openai.com/api/pricing/
 
 ## Referenties
 
-![Intro_to_large_language_models_Andrej_Karpathy](img/Intro_to_large_language_models_Andrej_Karpathy.png)
-https://www.youtube.com/watch?v=zjkBMFhNj_g&t=1738s
+- Github repository: https://github.com/Pieter-hogent/2324-trendsinai
+- Cursus: "generative-ai-with-llms", www.coursera.org
+- Cursus: "generative ai for beginners", https://microsoft.github.io/generative-ai-for-beginners/#/
+- deeplearning.ai - short courses
+- youtube: "Intro to large language models, Anrej Karpathy" -https://www.youtube.com/watch?v=zjkBMFhNj_g&t=1738s
 
 
 
