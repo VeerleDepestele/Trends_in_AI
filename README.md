@@ -10,11 +10,6 @@ SOFTWARE
 
 We gaan werken met Google Colab en huggingface.
 
-andere opties:
-- DataSpell i.s.m. Conda, het wordt uitgelegd in dataspell_conda.md
-- Dockerfile, het wordt uitgelegd in inleiding-docker.md
-
-
 - Les 1
   - les1_0_praktisch.md
   - les1_1_inleiding.md
