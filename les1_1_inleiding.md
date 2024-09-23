@@ -25,10 +25,17 @@ Ondanks de hype die recent gecreëerd werd door de komst van "generative AI mode
 De eerste prototypes van kunstmatige intelligentie ("artificial intelligence") bestonden uit "typewritten chatbots". Deze waren opgebouwd vanuit de gedocumenteerde kennis van een group van experten (een "knowledge base"). Deze kennis werd gerepresenteerd in een computer.
 De antwoorden in deze "typewritten chatbots" werden geactiveerd door trefwoorden die in de input tekst voorkwamen. Al snel werd duidelijk dat een dergelijke aanpak niet goed schaalde.
 
+De eerste chatbot, ELIZA, werd in 1966 ontwikkeld door Joseph Weizenbaum in het Artificial Intelligence-lab van het Massachusetts Institute of Technology (MIT). Vergeleken met de huidige chatbots gebruikt ELIZA vooraf bepaalde reacties op basis van een trefwoord. Als zodanig kan het niet echt een gesprek als een mens voeren.
+
+![Eliza](img/Eliza.png)
+
+(Hier is een mooi verhaal over de evolutie van chatbots:
+https://techacute.com/whats-the-first-chatbot-and-how-old-are-chatbots/)
+
 ### Machine learning: a statistical approach to AI ('90)
 Een keerpunt kwam in de jaren '90, met de toepassing van een statistische benadering van tekstanalyse. Dit leidde tot de ontwikkeling van nieuwe algoritmen, bekend onder de naam "machine learning", die in staat zijn patronen uit gegevens te leren zonder expliciet geprogrammeerd te zijn.
 Deze benadering stelt een machine in staat om menselijk taalbegrip te simuleren.
-Een statistisch model wordt getraind op tekst-label combinaties, waardoor het model onbekende input tekst kan classificeren met een vooraf gedefinieerd label dat de intentie van het bericht vertegenwoordigt.
+Een statistisch model wordt getraind op tekst-label combinaties, waardoor het model onbekende input tekst kan classificeren met een vooraf gedefinieerd label dat de intentie van het bericht vertegenwoordigt. Op tekstueel vlak spreken we van NLP, 'natural language processing'.
 
 ### Neurale netwerken en moderne virtuele assistanten (+-2010)
 Recenter, heeft de technologische evolutie van de hardware - het is nu mogelijk om grotere hoeveelheden data te verwerken en om meer complexe berekeningen uit te voeren - onderzoek in vershillende domeinen van de artificiële intelligentie gestimuleerd. Dit heeft geleid to de ontwikkeling van meer geavanceerde machine learning algoritmen: neurale netwerken of deep learning algoritmen.
