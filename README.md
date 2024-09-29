@@ -18,6 +18,7 @@ We gaan werken met Google Colab en huggingface.
   - les1_4_oefen.md
   
 - Les 2
-  - onderwerp: prompt engineering
+  - notebooks/les2_0_prompt_engineering_openai.ipynb
+  - notebooks/les2_1_prompt_engineering_llama.ipynb
   
   
