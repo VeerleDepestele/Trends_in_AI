@@ -24,6 +24,8 @@ We zullen de huggingface hub gebruiken om verschillende modellen te gebruiken.
 - Ga naar je profiel - settings - Access Tokens.
 - Creeër daar een token. Gebruik de knop 'Create new token'.
 - Je geeft de token een naam, met 'Write' zal je waarschijnlijk de meest ruime rechten hebben.
+  Voor onze lessen is 'Read' voorlopig genoeg. 
+![HF_create_new_access_token](/img/HF_create_new_access_token.png)
 - Bewaar je token ergens in een passwoord manager, zodat je er later aankan.
 - Voeg nu je huggingface token toe als secret key in Colab, zodat je via Colab de huggingface modellen kan gebruiken.
 ![add_google_drive_to_colab_3](/img/add_google_drive_to_colab_3.png)
