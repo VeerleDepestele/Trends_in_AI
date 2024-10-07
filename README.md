@@ -20,5 +20,15 @@ We gaan werken met Google Colab en huggingface.
 - Les 2
   - notebooks/les2_0_prompt_engineering_openai.ipynb
   - notebooks/les2_1_prompt_engineering_llama.ipynb
+
+- Les 3
+  - les3_0_quantization.md
+  - notebooks/les3_1_embeddings.ipynb
+  - les3_2_vectorstores.md
+  - notebooks/les3_3_navigable_small_world.ipynb
+  - notebooks/les3_4_navigable_small_world_solution.ipynb
+  referenties:
+  - deeplearning.ai - Understanding and Applying Text Embeddings
+  - deeplearning.ai - Vector Databases: from Embeddings to Applications
   
   
