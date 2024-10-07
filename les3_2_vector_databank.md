@@ -50,7 +50,7 @@ $$
 
 Stel dat we het KNN-algoritme gebruiken om een zwarte, stijlvolle schoen te vinden.
 
-![brute_force_search_algorithm](brute_force_search_algorithm.png)
+![brute_force_search_algorithm](img/brute_force_search_algorithm.png)
 
 Dan moeten volgende stappen doorlopen worden:
 - de afstand moet berekend worden tussen de query (de embedding vector van de "zwarte, stijlvolle schoen") en alle andere vectoren,
