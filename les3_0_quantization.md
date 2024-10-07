@@ -52,4 +52,4 @@ Laten we nu terugkeren naar de uitdaging om modellen in GPU-geheugen te passen e
 
 Kwantisatie zal je dezelfde mate van besparing opleveren als het gaat om training. Veel modellen hebben nu echter groottes van meer dan 50 miljard of zelfs 100 miljard parameters. Dit betekent dat je tot 500 keer meer geheugencapaciteit nodig hebt om ze te trainen, wat neerkomt op tienduizenden gigabytes. Deze enorme modellen overtreffen het model met één miljard parameters dat we hebben overwogen, zoals links te zien
 
-![quantization9](img/quantization8.png)
+![quantization9](img/quantization9.png)
