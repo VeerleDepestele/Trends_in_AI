@@ -1,4 +1,4 @@
-## vector databank
+# vector databank
 
 ## inleiding
 
@@ -305,6 +305,18 @@ In a **vector database**, an **index** refers to a data structure specifically d
 - **Image search:** Vectoren die afbeeldingen vertegenwoordigen (image embeddings), maken het snel vinden van gelijkaardige afbeeldingen mogelijk.
 
 Samengevat is de index in een vectordatabase ontworpen voor het efficiënt ophalen van hoog-dimensionale vectoren, waardoor snelle similarity searches mogelijk worden gemaakt in grote datasets met behulp van gespecialiseerde technieken zoals HNSW en FAISS.
+
+### Afstandsmaten
+#### Euclidische afstand
+![Euclidean_distance](img/Euclidean_distance.png)
+#### Manhatten adstand
+![Manhattan_distance](img/Manhattan_distance.png)
+#### dot product
+![dot_product](img/dot_product.png)
+#### cosine distance (1-cosine similarity)
+![cosine_distance](img/cosine_distance.png)
+
+
 
 
 
