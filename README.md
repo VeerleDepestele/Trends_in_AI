@@ -26,8 +26,11 @@ We gaan werken met Google Colab en huggingface.
   - notebooks/les3_1_embeddings.ipynb
   - les3_2_vectorstores.md
   - notebooks/les3_3_navigable_small_world.ipynb
-  - notebooks/les3_4_navigable_small_world_solution.ipynb \
-  
+  - notebooks/les3_4_navigable_small_world_solution.ipynb
+
+  data:
+    onder Documenten, op Chamilo
+
   referenties:
   - deeplearning.ai - Understanding and Applying Text Embeddings
   - deeplearning.ai - Vector Databases: from Embeddings to Applications
