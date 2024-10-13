@@ -10,6 +10,7 @@ We moeten ook vaak op zoek gaan naar 'gelijkaardige' resultaten, veeleer dan exa
 
 In de vectorruimte worden gelijkenis en verschil tussen datapunten vaak berekend op basis van de afstand tussen hun vectorrepresentaties  (bijvoorbeeld via de Euclidische afstand), dus hebben we ook hiervoor baat bij vector data.
 
+
 ## gelijkaardige data zoeken
 
 Gelijkaardige data zoeken op basis van numerieke criteria is sowieso simpel en efficiënt. Stel als voorbeeld dat we een schoenenwinkel website beheren, alle schoenen ophalen van maat 44 tot 46, of alle schoenen die tussen €100 en €150 kosten zijn triviale queries, waarvoor relationele databanken heel geschikt zijn.
@@ -62,6 +63,8 @@ Voordeel van het KNN-algoritme:
 
 Nadeel van het KNN-alogitme:
 - Dit schaalt absoluut niet als we immense hoeveelheden data beschouwen. We hebben nood aan andere algoritmen om buren te vinden.
+
+![KNN_runtime](/img/)
 
 ### Approximate Nearest Neighbour (ANN)
 
@@ -263,23 +266,6 @@ Op de figuur zie je dat wanneer je bv. gaat van 500.000 datapunten die aanwezig 
   
 ![HNSW_runtime](img/HNSW_runtime.png)
 
-Dit moet nog naar boven, voor NSW.
-In a **vector database**, an **index** refers to a data structure specifically designed to efficiently search and retrieve high-dimensional vectors (numerical representations of data such as images, text, or other complex data types). Vector databases are commonly used in machine learning, AI, and recommendation systems where data is represented as vectors in a multi-dimensional space.
-
-
-## Belangrijke Concepten
-
-1. **Vectorrepresentatie ofembedding**
-   In vectordatabases wordt elk gegevenspunt opgeslagen als een vector (een embedding), die kenmerken of eigenschappen van de data vertegenwoordigt. Bijvoorbeeld, in een image database kan een afbeelding worden weergegeven als een vector op basis van pixelintensiteit.
-
-2. **Indexing in Vectordatabases:**
-   De **index** in een vectordatabase is ontworpen om snel zoeken en ophalen van vectoren te ondersteunen, vooral voor similarity searches (het vinden van de meest vergelijkbare vectoren). Traditionele databases kunnen niet efficiënt omgaan met hoog-dimensionale data. Vectordatabases gebruiken gespecialiseerde indexing-technieken die geoptimaliseerd zijn voor dergelijke data.
-
-3. **Similarity search:**
-   Vectordatabases ondersteunen typisch **similarity searches**, zoals:
-   - **k-nearest neighbors (k-NN):** Vindt de top-k meest vergelijkbare vectoren.
-   - **Approximate Nearest Neighbors (ANN):** Biedt een snellere, benaderende oplossing. Hierbij wordt een beetje aan nauwkeurigheid ingeboet ten voordele van snelheid. Een voorbeeld hiervan is het hierarchical navigable small world ANN algoritme.
-
 ### Veelgebruikte indexing technieken in Vectordatabases:
 1. **LSH (Locality-Sensitive Hashing):**
    - **Doel:** Brengt vergelijkbare vectoren met grote waarschijnlijkheid in dezelfde hash-bucket.
@@ -294,17 +280,101 @@ In a **vector database**, an **index** refers to a data structure specifically d
    - **Hoe het werkt:** Het zoeken omvat het doorlopen van deze grafiek, waarbij dichterbij gelegen buren in opeenvolgende lagen worden verkend, wat leidt tot efficiënte benaderende nabijheidszoekopdrachten.
 
 4. **FAISS (Facebook AI Similarity Search):**
-   - Een sterk geoptimaliseerde 'vector indexing library' die meerdere indexeringsmethoden ondersteunt, zoals **quantization** en **inverted file indexes**, ontworpen voor zowel exacte als benaderende zoekopdrachten in zeer grote datasets.
+   - Een sterk geoptimaliseerde 'vector indexing library' die meerdere indexeringstechnieken ondersteunt, zoals **flat indexing** en **inverted file indexes**, ontworpen voor zowel exacte als benaderende zoekopdrachten in zeer grote datasets.
+  
+**Oefening**
+Beschrijf de indexing methode inverted file index.
 
-### Hoe Het Verschilt van Traditionele Indexen:
+### Hoe vector indexen verschillen van traditionele indexen:
 - **Hoog-dimensionale data:** In tegenstelling tot traditionele relationele database-indexen die omgaan met scalaire waarden (bijv. gehele getallen, strings), werken vectorindexen in een **hoog-dimensionale ruimte** (bijv. 512 of 1024 dimensies).
 - **Gelijkenis boven exacte overeenstemming:** Traditionele indexen zijn gebouwd voor exacte opzoekingen (bijv. het vinden van een rij met een specifieke sleutel). Vectorindexen richten zich op **gelijkenismaten** (bijv. Euclidische afstand, cosinusgelijkenis) om gegevenspunten te vinden die dichtbij zijn in de vectorruimte.
 
-### Voorbeeldtoepassingen:
-- **Recommandation systems:** Een vectordatabase kan gebruikersvoorkeuren en product-embeddings opslaan als vectoren. Wanneer een gebruiker interactie heeft met een product, gebruikt de database zijn index om snel de meest vergelijkbare producten te vinden.
-- **Image search:** Vectoren die afbeeldingen vertegenwoordigen (image embeddings), maken het snel vinden van gelijkaardige afbeeldingen mogelijk.
-
 Samengevat is de index in een vectordatabase ontworpen voor het efficiënt ophalen van hoog-dimensionale vectoren, waardoor snelle similarity searches mogelijk worden gemaakt in grote datasets met behulp van gespecialiseerde technieken zoals HNSW en FAISS.
+
+### Available vector databases.
+
+Een van de meest gebruikelijke manieren om ongestructureerde gegevens op te slaan en doorzoekbaar te maken, is door ze te embedden en de resulterende vectoren op te slaan. Vervolgens embed je de ongestructureerde query en haal je de vectoren (embeddings) op die het 'meest vergelijkbaar' zijn met de geëmbedde query. Een vectorstore zorgt voor het opslaan van geëmbedde gegevens en voert de vectorzoekopdracht voor je uit.
+
+De meeste vectorstores kunnen ook metadata over geëmbedde vectoren opslaan en ondersteunen filtering op die metadata voorafgaand aan een similarity search, waardoor je meer controle hebt over de teruggegeven documenten.
+
+Een vector database heeft als doel:
+- vector-embeddings **opslaan**,
+- vector-embeddings te **indexeren**,
+- vector-embeddings **op te halen** voor toepassingen zoals semantische zoekopdrachten, bv. voor recommandations.
+
+#### Wat sla je op in een vector database?
+- **Embeddings** van documenten, text chunks, beelden, of andere data types. 
+- **Metadata**: dit kan het originele document bevatten, chunk IDs, titels van documenten, timestamps, of andere contextuele informatie om het ophalen of filteren van resultaten te vergemakkelijken.
+
+#### Een voorbeeld van een workflow wanneer je met een vector database werkt:
+1. **Split document** into smaller chunks.
+2. **Choose embedding model** (e.g., `text-embedding-ada-002`).
+3. **Convert chunks** into vector embeddings using the model.
+4. **Store embeddings** along with metadata in the vector database.
+
+Er bestaan zowel open source vector databases, als proprietary vector databases.
+
+Elk van die databases heeft zijn eigen sterktes, afhankelijk van de use case: 
+- dataset size,
+- de scalability vereisten,
+- het beheer
+
+#### Oefening:
+1. Vergelijk bijvoorbeeld Pinecone, ChromaDB en Milvus op basis van:
+- de dataset size waarmee ze kunnen werken,
+- de scalability,
+- het beheer,
+
+https://docs.pinecone.io/guides/data/understanding-hybrid-search
+https://docs.trychroma.com/getting-started
+https://docs.trychroma.com/guides
+https://milvus.io/docs/basic_usage_langchain.md
+
+2. Wat is het nut van collections/namespaces?
+
+#### 1. ChromaDB
+- een **open-source vector database** :
+  het geeft developers controle over de database, wat ideaal is wanneer je een self-hosted oplossing nodig hebt, of wanneer je de database wil customizen.
+- embeddings van verschillende modaliteiten kunnen opgeslagen worden: tekst, beeld of audio.
+- toepassingen: AI applicaties die semantic search gebruiken, bv. recommender systems, image search.
+- voor kleine tot medium grote projecten.
+  
+#### 2. Pinecone
+- een **beheerde, cloudgebaseerde vector database**, de infrastructuur, scalability en maintenance worden verzorgd door Pinecone.
+-  Dit maakt het aantrekkelijk voor grootschalige toepassingen of ondernemingen die hun eigen infrastructuur niet willen beheren.
+- schaalbaarheid en Snelheid: Pinecone is geoptimaliseerd voor snelle vectorzoekopdrachten in grote datasets, waardoor het geschikt is voor realtime toepassingen met hoge throughput vereisen.
+- Integratie met ML-modellen: Pinecone kan embeddings opslaan van modellen zoals OpenAI’s GPT, BERT, CLIP,... en ondersteunt realtime zoekopdrachten, aanbevelingssystemen en rangschikkingstaken.
+
+#### 3. Milvus
+- een open-source vector database, deze biedt meer flexibiliteit in beheer dan Pinecone.
+- deze maakt gebruik van HNSW, FAISS, ...
+
+
+### Hybrid search
+
+Dit betekent dat je zowel vector-based als keyword-based zoekopdrachten kunt combineren in één query.
+
+Hybrid search stelt je in staat om het beste van beide werelden te gebruiken:
+
+Vector search: Gebruikt embeddings (numerieke representaties) om op basis van semantische overeenkomsten te zoeken in ongestructureerde data, zoals tekst, afbeeldingen, of andere media. Dit is handig om resultaten te vinden die conceptueel gerelateerd zijn, zelfs als de exacte woorden niet overeenkomen.
+Keyword search: Gebruikt traditionele zoektechnieken die zoeken naar exacte trefwoorden of termen in de data, wat handig is als je specifieke woorden of zinnen wilt vinden.
+
+Door deze zoekmethoden te combineren, kun je nauwkeurigere zoekresultaten krijgen door zowel te profiteren van de semantische kracht van embeddings als de precisie van keyword matching.
+
+ref. documentatie van Pinecone: 
+https://docs.pinecone.io/guides/data/understanding-hybrid-search
+
+In Pinecone, you perform hybrid search with sparse-dense vectors. Sparse-dense vectors combine dense and sparse embeddings as a single vector. Sparse and dense vectors represent different types of information and enable distinct kinds of search.
+
+​
+Dense vectors
+The basic vector type in Pinecone is a dense vector. Dense vectors enable semantic search. Semantic search returns the most similar results according to a specific distance metric even if no exact matches are present. This is possible because dense vectors generated by embedding models such as SBERT are numerical representations of semantic meaning.
+
+​
+Sparse vectors
+Sparse vectors have very large number of dimensions, where only a small proportion of values are non-zero. When used for keywords search, each sparse vector represents a document; the dimensions represent words from a dictionary, and the values represent the importance of these words in the document. Keyword search algorithms like the BM25 algorithm compute the relevance of text documents based on the number of keyword matches, their frequency, and other factors.
+
+
 
 ### Afstandsmaten
 #### Euclidische afstand
@@ -315,6 +385,8 @@ Samengevat is de index in een vectordatabase ontworpen voor het efficiënt ophal
 ![dot_product](img/dot_product.png)
 #### cosine distance (1-cosine similarity)
 ![cosine_distance](img/cosine_distance.png)
+
+
 
 
 
