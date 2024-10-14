@@ -266,21 +266,29 @@ Op de figuur zie je dat wanneer je bv. gaat van 500.000 datapunten die aanwezig 
   
 ![HNSW_runtime](img/HNSW_runtime.png)
 
-### Veelgebruikte indexing technieken in Vectordatabases:
-1. **LSH (Locality-Sensitive Hashing):**
-   - **Doel:** Brengt vergelijkbare vectoren met grote waarschijnlijkheid in dezelfde hash-bucket.
-   - **Hoe het werkt:** Gebruikt hashfuncties die de afstand tussen vergelijkbare vectoren minimaliseren. Door meerdere hashfuncties toe te passen, komen vectoren die dicht bij elkaar liggen in een hoog-dimensionale ruimte in dezelfde hash-buckets terecht, wat snellere gelijkeniszoekopdrachten mogelijk maakt.
+### Veelgebruikte algoritmen voor efficient zoeken in vectordatabases:
 
-2. **Tree-Based Indexes:**
-   - **KD-Tree:** Verdeelt de vectorruimte in regio's met behulp van hypervlakken. Hoewel efficiënt voor laag-dimensionale data, verslechtert de prestaties in hoge dimensies.
-   - **VP-Tree (Vantage Point Tree):** Gebruikt afstanden vanaf een referentiepunt (vantage point) om de ruimte te verdelen, wat beter geschikt is voor hoog-dimensionale vectorruimtes.
-
-3. **HNSW (Hierarchical Navigable Small World Graph):**
+1. **HNSW (Hierarchical Navigable Small World Graph):**
    - **Doel:** Bouwt een grafiek waarbij nodes vectoren vertegenwoordigen en edges nabijgelegen vectoren verbinden.
    - **Hoe het werkt:** Het zoeken omvat het doorlopen van deze grafiek, waarbij dichterbij gelegen buren in opeenvolgende lagen worden verkend, wat leidt tot efficiënte benaderende nabijheidszoekopdrachten.
 
-4. **FAISS (Facebook AI Similarity Search):**
+2. **inverted file index**
+
+3. **product quantization** (PQ)
+Product Quantization is een compressietechniek die wordt gebruikt om de grootte van vectoren te verkleinen door ze op te splitsen in subvectoren en deze afzonderlijk te quantificeren. Het is vaak geïntegreerd in andere zoekalgoritmen om het geheugenverbruik te verminderen en de snelheid van nearest neighbor search te verbeteren.
+
+4. **flat indexing**
+
+5. **Tree-Based Indexes:**
+   - **KD-Tree:** Verdeelt de vectorruimte in regio's met behulp van hypervlakken. Hoewel efficiënt voor laag-dimensionale data, verslechtert de prestaties in hoge dimensies.
+   - **VP-Tree (Vantage Point Tree):** Gebruikt afstanden vanaf een referentiepunt (vantage point) om de ruimte te verdelen, wat beter geschikt is voor hoog-dimensionale vectorruimtes.
+
+### Voorbeelden van libraries die gebruik maken van bovenstaande algoritmen::
+
+1. **FAISS (Facebook AI Similarity Search):**
    - Een sterk geoptimaliseerde 'vector indexing library' die meerdere indexeringstechnieken ondersteunt, zoals **flat indexing** en **inverted file indexes**, ontworpen voor zowel exacte als benaderende zoekopdrachten in zeer grote datasets.
+
+2. **Annoy**, 
   
 **Oefening**
 Beschrijf de indexing methode inverted file index.
