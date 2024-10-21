@@ -39,3 +39,12 @@ We gaan werken met Google Colab en huggingface.
   - notebooks/les3_2_navigable_small_world_solution.ipynb
   - notebooks/les4_3_pinecone_semantic_search.ipynb
   
+- Les 5
+  - les5_0_LLM_powered_applications.md
+  - notebooks/les5_1_langchain_RAG_project_exercise.ipynb
+
+  data:
+    onder Documenten, op Chamilo (lbdl.pdf)
+
+  referenties:
+  - coursera.org: Generative AI with Large Language Models
