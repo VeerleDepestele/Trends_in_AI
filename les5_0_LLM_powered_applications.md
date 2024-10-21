@@ -2,7 +2,7 @@
 
 Although training, finetuning and aligning with human preferences can help you build a great model for your application, there are some challenges with large language models that can't be solved by training alone. Let's take a look at a few examples. 
 
-![ models_having_difficulty](img/ models_having_difficulty.png)
+![models_having_difficulty](img/models_having_difficulty.png)
 
 - One issue is that the internal **knowledge** held by a model **cuts off** at the moment of pretraining. For example, if you ask a model that was trained in early 2022 who the British Prime Minister is, it will probably tell you Boris Johnson. This knowledge is out of date. The model does not know that Johnson left office in late 2022 because that event happened after its training. 
 
