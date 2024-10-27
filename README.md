@@ -48,3 +48,9 @@ We gaan werken met Google Colab en huggingface.
 
   referenties:
   - coursera.org: Generative AI with Large Language Models
+
+- Les 6
+  - les5_0_finetuning_and_evaluation.md
+
+  referenties:
+  - coursera.org: Generative AI with Large Language Models
