@@ -627,7 +627,7 @@ You explored two PEFT methods in this lesson.
 - LoRA, which uses rank decomposition matrices to update the model parameters in an efficient way.
 - Prompt Tuning, where trainable tokens are added to your prompt and the model weights are left untouched.
 
-![peft_methodes_summary](img/peft_methodes_summary.png)
+![peft_methodes_summary](img/peft_methods_summary.png)
 
 Both methods enable you to fine tune models with the potential for improved performance on your tasks while using much less compute than full fine tuning methods.
 
