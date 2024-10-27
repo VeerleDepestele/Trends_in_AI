@@ -647,3 +647,8 @@ In practice instruction finetuning has proven very effective and useful across a
 You can also combine LoRA with the quantization techniquesto further reduce your memory footprint. This is known as QLoRA.
 
 In practice, PEFT is used heavily to minimize compute and memory resources. And ultimately reducing the cost of fine tuning, allowing you to make the most of your compute budget and speed up your development process.
+
+## Getting started: Documentation and notebook
+https://huggingface.co/docs/peft/main/en/quicktour
+https://huggingface.co/docs/peft/main/en/task_guides/lora_based_methods
+
