@@ -428,8 +428,8 @@ Let's take a look at how it works. Here's a diagram of the transformer architect
 
 The input prompt is turned into tokens, which are then converted to embedding vectors and passed into the encoder and/or decoder parts of the transformer. 
 
-![transformers_recap2](img/transformers_recap2.png)
-![transformers_recap3](img/transformers_recap3.png)
+![transformers_recap2](img/transformers_recap_2.png)
+![transformers_recap3](img/transformers_recap_3.png)
 
 In both of these components, there are two kinds of neural networks; 
 - self-attention and
