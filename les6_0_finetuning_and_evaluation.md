@@ -19,7 +19,7 @@ Luckily, another solution exists, you can take advantage of a process known as *
 
 In contrast to pre-training, where you train the LLM using vast amounts of unstructured textual data via selfsupervised learning, fine-tuning is 
 - a supervised learning process
-- where you use a data set of labeled examples
+- where you use a dataset of labeled examples
 - to update the weights of the LLM.
 
 ![LLM_pretraining](img/LLM_pretraining.png)
@@ -31,9 +31,9 @@ Instruction fine-tuning trains the model using examples that demonstrate how it 
 
 ![Using_prompts_to_finetune_LLMs_with_instructions](img/Using_prompts_to_finetune_LLMs_with_instructions.png)
 
-The instruction in both examples is classify this review, and the desired completion is a text string that starts with sentiment followed by either positive or negative. The data set you use for training includes many pairs of prompt completion examples for the task you're interested in, each of which includes an instruction. 
+The instruction in both examples is classify this review, and the desired completion is a text string that starts with sentiment followed by either positive or negative. The dataset you use for training includes many pairs of prompt completion examples for the task you're interested in, each of which includes an instruction. 
 
-For example, if you want to fine tune your model to improve its summarization ability, you'd build up a data set of examples that begin with the instruction summarize, the following text or a similar phrase. And if you are improving the model's translation skills, your examples would include instructions like translate this sentence. 
+For example, if you want to fine tune your model to improve its summarization ability, you'd build up a dataset of examples that begin with the instruction summarize, the following text or a similar phrase. And if you are improving the model's translation skills, your examples would include instructions like translate this sentence. 
 
 ![Using_prompts_to_finetune_LLMs_with_instructions_2](img/Using_prompts_to_finetune_LLMs_with_instructions_2.png)
 
@@ -48,9 +48,9 @@ It is important to note that just like pre-training, full fine tuning requires e
 #### 1.  prepare your training data. 
 There are many publicly available datasets that have been used to train earlier generations of language models, although most of them are not formatted as instructions. 
 
-Therefore, developers have created **prompt template libraries** that can be used to take existing datasets - for example, the large data set of Amazon product reviews - and turn them into instruction prompt datasets for fine-tuning. 
+Therefore, developers have created **prompt template libraries** that can be used to take existing datasets - for example, the large dataset of Amazon product reviews - and turn them into instruction prompt datasets for fine-tuning. 
 
-Prompt template libraries include many templates for different tasks and different data sets. Here are three prompts that are designed to work with the Amazon reviews dataset and that can be used to fine tune models for classification, text generation and text summarization tasks. 
+Prompt template libraries include many templates for different tasks and different datasets. Here are three prompts that are designed to work with the Amazon reviews dataset and that can be used to fine tune models for classification, text generation and text summarization tasks. 
 
 ![sample_prompt_instruction_templates](img/sample_prompt_instruction_templates.png)
 
@@ -60,14 +60,14 @@ You can see that in each case
     - predict the associated rating,
     - generate a star review,
     - or give a short sentence describing the following product review.
-The result is a prompt that now contains both an instruction and the example from the data set.
+The result is a prompt that now contains both an instruction and the example from the dataset.
 
-Once you have your instruction data set ready, as with standard supervised learning, you divide the data set into training validation and test splits.
+Once you have your instruction dataset ready, as with standard supervised learning, you divide the dataset into training validation and test splits.
 
 ![validation_finetuning](img/validation_finetuning.png)
 
 During fine tuning, 
-- you select prompts from your training data set and pass them to the LLM, which then generates completions.
+- you select prompts from your training dataset and pass them to the LLM, which then generates completions.
 - Next, you compare the LLM completion with the response specified in the training data.
 
 ![example_labeled_dataset_to_llm](img/example_labeled_dataset_to_llm.png)
@@ -78,7 +78,7 @@ Remember that the output of an LLM is a probability distribution across tokens. 
 
 You'll do this for many batches of prompt completion pairs and over several epochs, update the weights so that the model's performance on the task improves. 
 
-As in standard supervised learning, you can define separate evaluation steps to measure your LLM performance using the holdout validation data set. This will give you the validation accuracy, and after you've completed your fine tuning, you can perform a final performance evaluation using the holdout test data set. This will give you the test accuracy. 
+As in standard supervised learning, you can define separate evaluation steps to measure your LLM performance using the holdout validation dataset. This will give you the validation accuracy, and after you've completed your fine tuning, you can perform a final performance evaluation using the holdout test dataset. This will give you the test accuracy. 
 
 The fine-tuning process results in **a new version of the base model, often called an instruct model** that is better at the tasks you are interested in. Fine-tuning with instruction prompts is the most common way to fine-tune LLMs these days. From this point on, when you hear or see the term fine-tuning, you can assume that it always means instruction fine tuning.
 
@@ -166,11 +166,11 @@ How can you formalize the improvement in performance of your fine-tuned model ov
 
 Let's explore several metrics that can be used to
 - assess the performance a model,
-- compare teh performance of a model to that of other models.
+- compare the performance of a model to that of other models.
 
 #### Performance in traditional machine learning
 
-You can assess how well a model is doing by looking at its performance on training and validation data sets. In these datasets, the output is already known. 
+You can assess how well a model is doing by looking at its performance on training and validation datasets. In these datasets, the output is already known. 
 
 Simple metrics can be calculated, such as accuracy:
 ![accuracy](img/accuracy.png)
@@ -255,7 +255,7 @@ For example, summarization. Rouge scores for different tasks are not comparable 
 
 As you've seen, a particular problem with simple rouge scores is that it's possible for a bad completion to result in a good score. Take, for example, this generated output, cold, cold, cold, cold. 
 
-![rouge_l_0](img/rouge_l_0.png)
+![rouge_clipping](img/rouge_clipping.png)
 
 As this generated output contains one of the words from the reference sentence, it will score quite highly, even though the same word is repeated multiple times. The Rouge-1 precision score will be perfect. 
 
@@ -500,7 +500,7 @@ The memory required to store these LoRA matrices is very small. So in principle,
 
 How good are these models? Let's use the ROUGE metric to compare the performance of a LoRA fine-tune model to both an original base model and a full fine-tuned version. As an example, let's focus on fine-tuning the FLAN-T5 for dialogue summarization. 
 
-The FLAN-T5-base model has had an initial set of full fine-tuning carried out using a large instruction data set. First, let's set a baseline score for the FLAN-T5 base model and the summarization data set we discussed earlier. Here are the ROUGE scores for the base model where a higher number indicates better performance. 
+The FLAN-T5-base model has had an initial set of full fine-tuning carried out using a large instruction dataset. First, let's set a baseline score for the FLAN-T5 base model and the summarization dataset we discussed earlier. Here are the ROUGE scores for the base model where a higher number indicates better performance. 
 
 ![sample_rouge_for_fft_vs_lora_ft](img/sample_rouge_for_fft_vs_lora_ft.png)
 
@@ -575,7 +575,7 @@ However, the soft prompts are not fixed discrete words of natural language. Inst
 
 Through supervised learning, the model learns the values for these virtual tokens that maximize performance for a given task. 
 
-In full fine tuning, the training data set consists of input prompts and output completions or labels. The weights of the large language model are updated during supervised learning. 
+In full fine tuning, the training dataset consists of input prompts and output completions or labels. The weights of the large language model are updated during supervised learning. 
 
 In contrast with prompt tuning, the weights of the large language model are frozen and the underlying model does not get updated. Instead, the embedding vectors of the soft prompt gets updated over time to optimize the model's completion of the prompt. 
 
@@ -631,12 +631,12 @@ You explored two PEFT methods in this lesson.
 
 Both methods enable you to fine tune models with the potential for improved performance on your tasks while using much less compute than full fine tuning methods.
 
-LoRA is broadly used in practice because of the comparable performance to full fine tuning for many tasks and data sets
+LoRA is broadly used in practice because of the comparable performance to full fine tuning for many tasks and datasets
 
 ## Finetuning summary
 
 - You've seen how to adapt a foundation model through a process called instruction fine-tuning.
-- You saw some of the prompt templates and data sets that were used to train the FLAN-T5 model.
+- You saw some of the prompt templates and datasets that were used to train the FLAN-T5 model.
 - You also saw how to use evaluation metrics and benchmarks such as ROUGE and HELM to measure success during model finetuning.
 
 In practice instruction finetuning has proven very effective and useful across a wide range of natural language use cases and tasks. With just a few hundred examples, you can fine tune a model to your specific task. 
