@@ -652,3 +652,8 @@ In practice, PEFT is used heavily to minimize compute and memory resources. And 
 https://huggingface.co/docs/peft/main/en/quicktour
 https://huggingface.co/docs/peft/main/en/task_guides/lora_based_methods
 
+## FAQ van openai
+When should I use fine-tuning vs embeddings / retrieval augmented generation?
+https://platform.openai.com/docs/guides/fine-tuning/faq
+https://youtu.be/ahnGLM-RC1Y
+
