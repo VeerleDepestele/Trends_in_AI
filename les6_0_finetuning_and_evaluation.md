@@ -1,5 +1,5 @@
 # Finetuning
-## Instruction finetuning
+## 1. Instruction finetuning
 
 In this lesson, you'll learn
 - about methods that you can use to improve the performance of an existing model for your specific use case,
@@ -43,9 +43,11 @@ Instruction fine-tuning, where all of the model's weights are updated is known a
 
 It is important to note that just like pre-training, full fine tuning requires enough memory and compute budget to store and process all the gradients, optimizers and other components that are being updated during training. You can benefit from the memory optimization and parallel computing strategies (quantization, pruning, ...). 
 
-### How to do this in practice, instruction finetuning an LLM?
+### 1.1 Instruction finetuning in practice
 
-#### 1.  prepare your training data. 
+How to do this in practice, instruction finetuning an LLM?
+
+#### 1.1.1  prepare your training data. 
 There are many publicly available datasets that have been used to train earlier generations of language models, although most of them are not formatted as instructions. 
 
 Therefore, developers have created **prompt template libraries** that can be used to take existing datasets - for example, the large dataset of Amazon product reviews - and turn them into instruction prompt datasets for fine-tuning. 
@@ -62,7 +64,9 @@ You can see that in each case
     - or give a short sentence describing the following product review.
 The result is a prompt that now contains both an instruction and the example from the dataset.
 
-Once you have your instruction dataset ready, as with standard supervised learning, you divide the dataset into training validation and test splits.
+#### 1.1.2  supervised learning: training, validation, test
+
+Once you have your instruction dataset ready, as with standard supervised learning, you divide the dataset into training, validation and test splits.
 
 ![validation_finetuning](img/validation_finetuning.png)
 
@@ -74,6 +78,8 @@ During fine tuning,
 
 In the example, the model didn't do a great job, it classified the review as neutral, which is a bit of an understatement. The review is clearly very positive.
 
+#### 1.1.3  training: learning/updating the weights
+
 Remember that the output of an LLM is a probability distribution across tokens. So you can compare the distribution of the completion and that of the training label and use the standard crossentropy function to calculate loss between the two token distributions. And then use the calculated loss to update your model weights in standard backpropagation.
 
 You'll do this for many batches of prompt completion pairs and over several epochs, update the weights so that the model's performance on the task improves. 
@@ -82,7 +88,7 @@ As in standard supervised learning, you can define separate evaluation steps to 
 
 The fine-tuning process results in **a new version of the base model, often called an instruct model** that is better at the tasks you are interested in. Fine-tuning with instruction prompts is the most common way to fine-tune LLMs these days. From this point on, when you hear or see the term fine-tuning, you can assume that it always means instruction fine tuning.
 
-## Finetuning on a single task.
+### 1.2 Finetuning on a single task.
 
 LLMs are trained to perform many different tasks. Sometimes, your application only needs to perform one single task, like summarizing text. Then, you could finetune on that single task. Often just 500-1,000 examples can result in good performance in contrast to the billions of pieces of texts that the model saw during pre-training. 
 
@@ -109,7 +115,7 @@ What options do you have to avoid catastrophic forgetting?
     -  you can perform fine-tuning on multiple tasks at one time. Good multitask fine-tuning may require 50-100,000 examples across many tasks, and so will require more data and compute to train.
     - A second option is to perform parameter efficient fine-tuning, or PEFT for short instead of full fine-tuning. PEFT is a set of techniques that preserves the weights of the original LLM and trains only a small number of task-specific adapter layers and parameters. PEFT shows greater robustness to catastrophic forgetting since most of the pre-trained weights are left unchanged.
  
-## Multi-task instruction finetuning
+### 1.3 Multi-task instruction finetuning
 
 Multitask fine-tuning is an extension of single task fine-tuning, where the training dataset is comprised of example inputs and outputs for multiple tasks. 
 
@@ -158,9 +164,9 @@ The SAMSum dataset gives FLAN-T5 some abilities to summarize conversations. Howe
 
 One thing you need to think about when fine-tuning is how to evaluate the quality of your models completions. Next, you'll learn about several metrics and benchmarks that can be used to determine how well the model is performing and how much better the're fine-tuned version is than the original base model.
 
-## Evaluation
+## 2. Evaluation
 
-### LLM evaluation - challenges
+### 2.1 LLM evaluation - challenges
 
 How can you formalize the improvement in performance of your fine-tuned model over the pre-trained model you started with? 
 
@@ -168,7 +174,7 @@ Let's explore several metrics that can be used to
 - assess the performance a model,
 - compare the performance of a model to that of other models.
 
-#### Performance in traditional machine learning
+#### 2.1.1 Performance in traditional machine learning
 
 You can assess how well a model is doing by looking at its performance on training and validation datasets. In these datasets, the output is already known. 
 
@@ -177,7 +183,7 @@ Simple metrics can be calculated, such as accuracy:
 
 This states the fraction of all predictions that are correct. It can be measured because **the models are deterministic**.
 
-#### Performance in LLM
+#### 2.1.2 Performance in LLM
 
 Witt large language models, **the output is non-deterministic**. Therefore, language-based evaluation is much more challenging. 
 
@@ -190,6 +196,8 @@ Although there is only one word of difference between the sentences 'Mike does n
 
 Humans can see the similarities and differences. But when you train a model on millions of sentences, you need an automated, structured way to make measurements. 
 
+### 2.2 Simple metrics: ROUGE & BLEU
+
 ROUGE and BLEU, are two widely used evaluation metrics for different tasks. 
 
 ROUGE or Recall Oriented Understudy for Gisting Evaluation is primarily employed to assess the quality of automatically generated summaries by comparing them to human-generated reference summaries. 
@@ -198,7 +206,7 @@ BLEU, or Bilingual Evaluation Understudy is an algorithm designed to evaluate th
 
 ![llm_evaluation_metrics](img/llm_evaluation_metrics.png)
 
-##### Terminology:
+#### 2.2.1 Terminology
 
 In the anatomy of language, 
 - a unigram is equivalent to a single word,
@@ -207,7 +215,7 @@ In the anatomy of language,
 
 ![terminology](img/terminology.png)
 
-##### ROUGE-1 metric.
+#### 2.2.2 ROUGE-1 metric
 
 ROUGE: Recall Oriented Understudy for Gisting Evaluation
 
@@ -233,13 +241,17 @@ Imagine that the sentence generated by the model was different by just one word,
 
 ![rouge_1_0](img/rouge_1_0.png)
 
+#### 2.2.3 ROUGE-2 metric
+
 You can get a slightly better score by taking into account bigrams or collections of two words at a time from the reference and generated sentence.
 
 By working with pairs of words you're acknowledging in a very simple way, the ordering of the words in the sentence. By using bigrams, you're able to calculate a ROUGE-2. Now, you can calculate the recall, precision, and F1 score using bigram matches instead of individual words. You'll notice that the scores are lower than the ROUGE-1 scores. 
 
 ![rouge_2_0](img/rouge_2_0.png)
 
-With longer sentences, they're a greater chance that bigrams don't match, and the scores may be even lower. Rather than continue on with ROUGE numbers growing bigger to n-grams of three or fours, let's take a different approach. 
+With longer sentences, they're a greater chance that bigrams don't match, and the scores may be even lower. Rather than continue on with ROUGE numbers growing bigger to n-grams of three or fours, let's take a different approach.
+
+#### 2.2.4 ROUGE-L metric
 
 ![rouge_l_0](img/rouge_l_0.png)
 
@@ -252,6 +264,8 @@ Collectively, these three quantities are known as the Rouge-L score.
 As with all of the rouge scores, you need to take the values in context. You can only use the scores to compare the capabilities of models if the scores were determined for the same task. 
 
 For example, summarization. Rouge scores for different tasks are not comparable to one another. 
+
+#### 2.2.5 ROUGE: clipping function
 
 As you've seen, a particular problem with simple rouge scores is that it's possible for a bad completion to result in a good score. Take, for example, this generated output, cold, cold, cold, cold. 
 
@@ -270,7 +284,7 @@ Whilst using a different rouge score can help, experimenting with a n-gram size 
 
 Note that many language model libraries, for example, Hugging Face, include implementations of rouge score that you can use to easily evaluate the output of your model. 
 
-##### BLEU metric.
+#### 2.2.6 BLEU metric
 
 BLEU: Bilingual Evaluation Understudy 
 
@@ -290,7 +304,7 @@ As we get closer and closer to the original sentence, we get a score that is clo
 
 Both rouge and BLEU are quite simple metrics and are relatively low-cost to calculate. You can use them for simple reference as you iterate over your models, but you shouldn't use them alone to report the final evaluation of a large language model. Use rouge for diagnostic evaluation of summarization tasks and BLEU for translation tasks. For overall evaluation of your model's performance, however, you will need to look at one of the evaluation benchmarks that have been developed by researchers.
 
-##### Benchmarks
+### 2.3 Benchmarks
 
 LLMs are complex. Simple evaluation metrics like the rouge and bleu scores, can only tell you so much about the capabilities of your model. In order to measure and compare LLMs more holistically, you can make use of pre-existing datasets, and associated benchmarks that have been established by LLM researchers specifically for this purpose. 
 
@@ -310,7 +324,7 @@ An important issue that you should consider is whether the model has seen your e
 
 Benchmarks, such as GLUE, SuperGLUE, or Helm, cover a wide range of tasks and scenarios. They do this by designing or collecting datasets that test specific aspects of an LLM. 
 
-**GLUE**
+#### 2.3.1 GLUE
 
 GLUE, or General Language Understanding Evaluation, was introduced in 2018. GLUE is a collection of natural language tasks, such as sentiment analysis and question-answering. 
 
@@ -318,7 +332,8 @@ GLUE was created to encourage the development of models that can generalize acro
 
 ![glue](img/glue.png)
 
-**SuperGLUE**
+#### 2.3.2 SUPERGLUE
+
 As a successor to GLUE, SuperGLUE was introduced in 2019, to address limitations in its predecessor. 
 
 It consists of a series of tasks, some of which are not included in GLUE, and some of which are more challenging versions of the same tasks. SuperGLUE includes tasks such as multi-sentence reasoning, and reading comprehension. 
@@ -333,17 +348,17 @@ As models get larger, their performance against benchmarks such as SuperGLUE sta
 
 There is essentially an arms race between the emergent properties of LLMs, and the benchmarks that aim to measure them. Here are a couple of recent benchmarks that are pushing LLMs further. 
 
-**MMLU**
+#### 2.3.3 MMLU
 Massive Multitask Language Understanding, or MMLU, is designed specifically for modern LLMs. 
 
 To perform well models must possess extensive world knowledge and problem-solving ability. Models are tested on elementary mathematics, US history, computer science, law, and more. In other words, tasks that extend way beyond basic language understanding. 
 
-**BIG-bench**
+#### 2.3.4 BIG-bench
 BIG-bench currently consists of 204 tasks, ranging through linguistics, childhood development, math, common sense reasoning, biology, physics, social bias, software development and more. 
 
 BIG-bench comes in three different sizes, and part of the reason for this is to keep costs achievable, as running these large benchmarks can incur large inference costs. 
 
-**HELM**
+#### 2.3.5 HELM
 A final benchmark you should know about is the Holistic Evaluation of Language Models, or HELM.
 
 The HELM framework aims to **improve the transparency of models**, and to offer guidance on which models perform well for specific tasks. 
@@ -355,7 +370,9 @@ The benchmark also **includes metrics for fairness, bias, and toxicity**, which 
 
 ref. https://crfm.stanford.edu/helm/lite/latest/
     - 
-## Parameter efficient finetuning
+## 3. Parameter efficient finetuning
+
+### 3.1 PEFT concept
 
 Training LLMs is computationally intensive. 
 
@@ -403,6 +420,8 @@ There are several methods you can use for parameter efficient fine-tuning, each 
 
 ![peft_trade_offs](img/peft_trade_offs.png)
 
+### 3.2 PEFT methods
+
 Let's take a look at the three main classes of PEFT methods. 
 
 ![peft_methods](img/peft_methods.png)
@@ -418,7 +437,9 @@ Here there are two main approaches.
 - **Adapter methods** add new trainable layers to the architecture of the model, typically inside the encoder or decoder components after the attention or feed-forward layers.
 - **Soft prompt methods**, on the other hand, keep the model architecture fixed and frozen, and focus on manipulating the input to achieve better performance. This can be done by adding trainable parameters to the prompt embeddings or keeping the input fixed and retraining the embedding weights. In this lesson, you'll take a look at a specific soft prompts technique called prompt tuning.
 
-### Low-Rank Adaptation of Large Language Models (LoRA)
+### 3.3 Low-Rank Adaptation of Large Language Models (LoRA)
+
+#### 3.3.1 LoRA concept
 
 Low-rank Adaptation, or LoRA for short, is a parameter-efficient fine-tuning technique that falls into the re-parameterization category. 
 
@@ -496,7 +517,7 @@ If instead, you want to carry out a different task, say Task B, you simply take 
 
 The memory required to store these LoRA matrices is very small. So in principle, you can use LoRA to train for many tasks. Switch out the weights when you need to use them, and avoid having to store multiple full-size versions of the LLM.
 
-### Lora - evaluation
+#### 3.3.2 Lora - evaluation
 
 How good are these models? Let's use the ROUGE metric to compare the performance of a LoRA fine-tune model to both an original base model and a full fine-tuned version. As an example, let's focus on fine-tuning the FLAN-T5 for dialogue summarization. 
 
@@ -514,7 +535,7 @@ Now let's take a look at the scores for the LoRA fine-tuned model. You can see t
 
 However, using LoRA for fine-tuning trained a much smaller number of parameters than full fine-tuning using significantly less compute, so this small trade-off in performance may well be worth it. 
 
-### LoRa - choose the rank of the LoRa matrices
+#### 3.3.3 LoRa - choose the rank of the LoRa matrices
 You might be wondering how to choose the rank of the LoRA matrices. This is still an active area of research. 
 
 In principle, the smaller the rank, the smaller the number of trainable parameters, and the bigger the savings on compute. 
@@ -530,7 +551,7 @@ The table shows
 - the final loss value of the model, 
 - the scores for different metrics, including BLEU and ROUGE.
 
-The bold values indicate the best scores that were achieved for each metric. The authors found a plateau in the loss value for ranks greater than 16. In other words, using larger LoRA matrices didn't improve performance. 
+The bold values indicate the best scores that were achieved for each metric. The authors found a plateau in the loss value for ranks greater than 16. In other words, using larger LoRA matrices didn't improve performance.
 
 The takeaway here is that ranks in the range of 4-32 can provide you with a good trade-off between reducing trainable parameters and preserving performance. 
 
@@ -538,7 +559,9 @@ Optimizing the choice of rank is an ongoing area of research and best practices 
 
 LoRA is a powerful fine-tuning method that achieves great performance. The principles behind the method are useful not just for training LLMs, but also for models in other domains.
 
-## Prompt tuning
+### 3.4 Prompt tuning
+
+#### 3.4.1 Prompt tuning concept
 
 With LoRA, the goal was to find an efficient way to update the weights of the model without having to train every single parameter again. 
 
@@ -594,7 +617,7 @@ Soft prompts are very small on disk, so this kind of fine tuning is extremely ef
 
 You'll notice the same LLM is used for all tasks, all you have to do is switch out the soft prompts at inference time. 
 
-### Soft prompt - evaluation
+#### 3.4.2 Soft prompt - evaluation
 
 So how well does prompt tuning perform? In the original paper, (...), the authors compared prompt tuning to several other methods for a range of model sizes.
 
@@ -621,7 +644,7 @@ However, an analysis of the nearest neighbor tokens to the soft prompt location 
 
 In other words, the words closest to the soft prompt tokens have similar meanings. The words identified usually have some meaning related to the task, suggesting that the prompts are learning word like representations. 
 
-## PEFT methods summary
+### 3.5 PEFT methods summary
 
 You explored two PEFT methods in this lesson. 
 - LoRA, which uses rank decomposition matrices to update the model parameters in an efficient way.
@@ -633,7 +656,7 @@ Both methods enable you to fine tune models with the potential for improved perf
 
 LoRA is broadly used in practice because of the comparable performance to full fine tuning for many tasks and datasets
 
-## Finetuning summary
+## 3. Finetuning summary
 
 - You've seen how to adapt a foundation model through a process called instruction fine-tuning.
 - You saw some of the prompt templates and datasets that were used to train the FLAN-T5 model.
@@ -648,14 +671,22 @@ You can also combine LoRA with the quantization techniquesto further reduce your
 
 In practice, PEFT is used heavily to minimize compute and memory resources. And ultimately reducing the cost of fine tuning, allowing you to make the most of your compute budget and speed up your development process.
 
-## Getting started: Documentation and notebook
+## 4. Getting started: Documentation and notebook
 https://huggingface.co/docs/peft/main/en/quicktour
-https://huggingface.co/docs/peft/main/en/task_guides/lora_based_methods
+https://huggingface.co/docs/peft/main/en/task_guides/image_classification_lora
 
-## FAQ van openai
-When should I use fine-tuning vs embeddings / retrieval augmented generation?
+If you do not have a paying account on HuggingFace, you will not be allowed to push the results to the hub (push_to_hub()).
+Instead you can save your result locally, by using "save_pretrained(choose_a_location_path).
 
+Running the code with Colab, needs using the GPU.
+
+## 5. FAQ van openai
+Know that you know about finetuning and RAG, the follwoing question may arrise:
+"When should I use fine-tuning vs embeddings / retrieval augmented generation?"
+
+A relevant video explaining how to make a choice can be found on:
 https://platform.openai.com/docs/guides/fine-tuning/faq
 
+Link to the video:
 https://youtu.be/ahnGLM-RC1Y
 
