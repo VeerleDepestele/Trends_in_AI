@@ -46,7 +46,7 @@ Het is niet moeilijk om meer kwaadaardige toepassingen van deze techniek voor te
 - **indirect prompt injection**
 Indirect prompt injection is een manier van prompt injection waarbij de prompt in de tekst die verwerkt wordt verborgen is.
 
-![les7_indirect_prompt_injection](img/les7_indirect_prompt_injection.jpg)
+![les7_indirect_prompt_injection](img/les7_indirect_prompt_injection.png)
 
   - ** data exfiltration attacks**
 ref. https://simonwillison.net/2023/Apr/14/worst-that-can-happen/
