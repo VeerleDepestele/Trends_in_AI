@@ -58,6 +58,7 @@ We gaan werken met Google Colab en huggingface.
 - Les 7
   - les7_0_prompt_injection.md
   - les7_1_adversarial_ai.md
+  - les7_2_RLHF.md
 
   referenties:
   - deeplearning.ai - Red Teaming LLM Applications
