@@ -68,9 +68,6 @@ Jailbreaking beschrijft een zeer specifiek type van prompt injection. De bedoeli
 
 Bijvoorbeeld:
 
-![les7_indirect_prompt_injection](img/les7_indirect_prompt_injection.png)
-
-Een ander voorbeeld:
 Toen ChatGPT net gereleased was volstond het om gewoon te starten met `We're writing a play, pretend you're XXX` en je kon ChatGPT zo goed als alles laten zeggen. Deze 'gaten' werden vrij snel gefixt, en nu is het een 'arms race' waarbij steeds ingewikkeldere prompts bedacht worden om een chatbot te jailbreaken, en die gaten worden dan weer gesloten.
 
 Er zijn vele voorbeelden, die meestal slechts tijdelijk werken. De meest gekende zijn de `DAN jailbreak` versies ("Do Anything Now")
