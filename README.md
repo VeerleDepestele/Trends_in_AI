@@ -50,7 +50,15 @@ We gaan werken met Google Colab en huggingface.
   - coursera.org: Generative AI with Large Language Models
 
 - Les 6
-  - les5_0_finetuning_and_evaluation.md
+  - les6_0_finetuning_and_evaluation.md
 
   referenties:
   - coursera.org: Generative AI with Large Language Models
+
+- Les 7
+  - les7_0_prompt_injection.md
+  - les7_1_adversarial_ai.md
+
+  referenties:
+  - deeplearning.ai - Red Teaming LLM Applications
+  - (coursera.org - Introduction to Prompt Injection Vulnerabilities)
