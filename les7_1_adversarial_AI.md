@@ -2,25 +2,16 @@
 
 ## 0. content
 
-1. adversarial AI
-
-      1.1 definition
-
-      1.2 OWASP top 10 for LLM applications
-
-2. red teaming
-
-    2.1 definition
-  
-    2.2 demo application
-  
-    2.3 red teaming: techniques
-  
-    2.4 red teaming at scale
-  
-    2.5 red teaming at scale: beyond rule-based
-    
-    2.6 solutions
+- 1. adversarial AI
+     1.1 definition
+     1.2 1.2 OWASP top 10 for LLM applications
+- 2. red teaming
+     2.1 definition
+     2.2 demo application
+     2.3 red teaming: techniques
+     2.4 red teaming at scale
+     2.5 red teaming at scale: beyond rule-based
+     2.6 solutions
 
 ## 1. adversarial AI
 
@@ -281,9 +272,9 @@ Consequence: The application is unavailable for legitimate users or enormous cos
  
 #### 2.2.4 Hallucinations.
 
-- 1. A customer is told by the chatbot that they can get very high interest rates if they switch to Zephyr Bank.
-- 2. The customer is happy and opens an account.
-- 3. The interes rate was not real, and the customer feels cheated.
+- A customer is told by the chatbot that they can get very high interest rates if they switch to Zephyr Bank.
+- The customer is happy and opens an account.
+- The interes rate was not real, and the customer feels cheated.
 
 Example 1: An example of a $1000 reward vs. example of a $2000 dollar reward. The last one does not exist.
 The bot made up the answer to match out assumptions.
