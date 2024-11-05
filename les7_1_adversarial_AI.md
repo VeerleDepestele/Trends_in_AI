@@ -2,16 +2,25 @@
 
 ## 0. content
 
-- 1. adversarial AI
-     1.1 definition
-     1.2 1.2 OWASP top 10 for LLM applications
-- 2. red teaming
-     2.1 definition
-     2.2 demo application
-     2.3 red teaming: techniques
-     2.4 red teaming at scale
-     2.5 red teaming at scale: beyond rule-based
-     2.6 solutions
+1. adversarial AI
+
+   1.1 definition
+   
+   1.2 OWASP top 10 for LLM applications
+   
+2. red teaming
+
+   2.1 definition
+   
+   2.2 demo application
+
+   2.3 red teaming: techniques
+
+   2.4 red teaming at scale
+
+   2.5 red teaming at scale: beyond rule-based
+
+   2.6 solutions
 
 ## 1. adversarial AI
 
