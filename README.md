@@ -63,3 +63,10 @@ We gaan werken met Google Colab en huggingface.
   referenties:
   - deeplearning.ai - Red Teaming LLM Applications
   - (coursera.org - Introduction to Prompt Injection Vulnerabilities)
+
+  - Les 8
+    - les8_O_bias.md
+    - notebooks/les8_1_data_bias.ipynb
+    - notebooks/les8_2_statistical_parity.ipynb
+    - notebooks/les8_3_aif360_tutorial.ipynb
+    - notebooks/les8_4_salary_prediction_classification.ipynb
