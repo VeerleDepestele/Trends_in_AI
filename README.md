@@ -64,9 +64,14 @@ We gaan werken met Google Colab en huggingface.
   - deeplearning.ai - Red Teaming LLM Applications
   - (coursera.org - Introduction to Prompt Injection Vulnerabilities)
 
-  - Les 8
-    - les8_O_bias.md
-    - notebooks/les8_1_data_bias.ipynb
-    - notebooks/les8_2_statistical_parity.ipynb
-    - notebooks/les8_3_aif360_tutorial.ipynb
-    - notebooks/les8_4_salary_prediction_classification.ipynb
+- Les 8
+  - les8_O_bias.md
+  - notebooks/les8_1_data_bias.ipynb
+  - notebooks/les8_2_statistical_parity.ipynb
+  - notebooks/les8_3_aif360_tutorial.ipynb
+  - notebooks/les8_4_salary_prediction_classification.ipynb
+  - notebooks/les8_4_salary_prediction_classification_reworked.ipynb
+
+  data:
+    download van kaggle (zie ipynb)
+    onder Documenten, op Chamilo: german.data, h181.zip, h192.zip (ref. medical_expenditure)
