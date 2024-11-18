@@ -87,11 +87,9 @@ Fairness can be measured at different points in a machine learning pipeline:
 
 Remark: 4.3 data bias, 4.4 demographic / statistical parity, 4.5 dispate impact are strongly related.
 
-Compare the distribution of sensitive variables between the target and the whole dataset.
+The first step is the data bias check, which is a comparison of the distributions of sensitive variables between the target and the whole dataset.
 
 Example of intervention: collecting more data to find evidence of unfair bias.
-
-The first step is the data bias check, which is a comparison of the distributions of sensitive variables between the target and the whole dataset.
 
 When checking a sensitive variable (e.g. gender), we compare 
 - its volume wrt the total volume (eg do males and females follow the popluation distribution?, If not, is there a plausible reson?)
@@ -227,7 +225,7 @@ Input correction approaches apply a modification step to the testing data. This 
 ### 5.3.2 post-processing method: output correction
 The latest stage of applying bias mitigation methods is the correction of the output. In particular, the predicted labels are modified.
 
-## 5.3.3 probably a post-processing method:
+### 5.3.3 probably a post-processing method:
 "Train Then Mask", ref. https://arxiv.org/abs/1811.04973
 
 
