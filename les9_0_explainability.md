@@ -78,181 +78,21 @@ Suppose a black box model is too complex to be interpreted. In that case, a work
 - the focus is on estimating the target as accurately, without necessarily wondering how the model came to that prediction
 - example: fraud detection, response modeling
 
- ## 3. global explainability
+## 3. global explainability
  
 Different techniques exist to estimate which features are important according to the machine learning model:
  
-### 3.1 inspecting the mean decrease in impurity. 
-This is commonly done in tree-based ensembles, like random forest models.
-
-- Is is model dependent (it is different in random forest models and gradient boosted models)
-- We can gauge the importance of a feature by looking at the position of the feature (cfr. random forest model: features near to the top are more important)
-    
-### 3.2 drop feature importance
-Drop a feature from the model, train it again, inspect the impact on the model performance. This requires multiple retraining runs of the machine learning model and can thus be slow.
-
-This method is model agnostic.
-
-### 3.3 permutation based feature importance
-This is a more powerfull method to evaluate feature importance. It is model agnostic and considered to be the best approach.
-
-Here is how it works:
-
-- Start from a trained machine learning model on a given dataset and a performance measure of interest (AUC, accuracy, profit, ...)
-- Randomly permute the feature under review.
-- Use the trained machine learning model to predict the observations again.
-- Calculate the feature importance as the difference in performance between the model on the original data and on the permuted data.
-
-Permutation based feature importance indicates which features are important, but not how these features influence the outcome or prediction (positive, negative, relation with other features).
-
-Note that this also takes into account interactions, as the shuffling breaks down the interaction effect.
-When permuting, the correlation between features is broken.
-
-This can be used for feature selection: train on the top N selected features only (Boruta feature selection).
-Correlated features are likely to share importance which might lead to misinterpretation. 
-(check for correlation)
-
-One can also perform permutations on several features at once, to zoom in on interation effects.
-
-Perform the permutation exercise, both on the training and test data set,
-
-- train: understand the importance for the feature in the model,
-- test: understand if there was overfitting of the machine learning model on the training dataset.
-
-### 3.4 partial dependence plots
-Aim: understand how a feature impacts the outcome of a machine learning model.
-
-Idea: keep the feature under study fixed and impute all the others with the median or mode over all observations.
-
-The trained machine learning model is then used to make predictions on the new dataset. Then plot the predicted probalilities for the different values of the feature under study.
-
-Interation effects might not show up in a PDP. However, a partial dependence plot could be used to detect interation effects.
-We could observe patterns in the data, and contract those with the PDP. 
-
-Say, we are building a model for churn prediction. Suppose that we've learnt from the data that the probability of churning decreases in the age category of 30-40 years (i.e. the probability of churning is lower in that age category than in the surrounding age categories). Suppose that the PDP shows that the probability of churning is equal over all age categories. This would be a sign that there is an interaction of the age categories with other features used in the model.
-
-When using this methode, you can choose to combine several features (as it is the case for permutation based feature importance).
-
-Frequently used vizualization methods are contour or 3d-plots.
+- 3.1 inspecting the mean decrease in impurity. 
+- 3.2 drop feature importance
+- 3.3 permutation based feature importance
+- 3.4 partial dependence plots
 
 ## 4. Local explainability
-### 4.1 Individual conditional expectation (ICE) plots
+- 4.1 Individual conditional expectation (ICE) plots
+- 4.2 LIME
+- 4.3 Shapley values
 
-Individual conditional expectation (ICE) plots are similar to partial dependency plots (PDPs). 
-
-This is less clear here, based on the intuïtive description for a PDP above. It is more clear in the "les9_4_local_interpretability.ipynb".
-
-The key idea is not to replace features with the median or mode, but keep each feature as is.
-
-Create new observations based on the values of the feature under study.
-Or, a grid based range can be defined to the feature under study, between its observed min and max.
-
-Ice plots are well suited to show the behaviour of a feature accross the entire dataset.
-
-It is recommended to explore ICE plots for the important features only.
-
-Also, compare training and test.
-
-By using ICE plots for the training set, it allows to understand how a machine learning model actually relied on each feature.
-
-By doing ICE plots on the test set, we can verify whether the feature impacts are similar as on the training set, and whether there was no overfitting of the machine learning model on the training set.
-
-### 4.2 LIME
-Local, Interpretable, Model Agnostic Explanations.
-
-Idea: LIME implements a local surrogate model to provide predictions.
-Goal: it helps to explain single individual predictions.
-
-I.e. not the data, a feature (like PDP) or the model as a whole.
-
-It is model agnostic, i.e. it works on any type of black box model: neural networks, SVM's, XGBoost, enz.
-
-It works with tabular and other types of data, such as text and images.
-
-Suppose we have trained a blackbox classifier b(), we want to explain the prediction of an instance, x_i, by that classifier.
-
-b(x_i) = p(y=1|x_i) = 0.78
-
-Main idea:
-- create a new dataset containing permuted samples around x_i,
-- have the blackbox model b() provide predictions for the data in the new dataset,
-- train a 'local', interpretable model on this dataset and use it to offer explanations
-- this 'local' model is weighted by taking a sample based on the proximity of permuted instances around x_i.)
-- commonly used models are LASSO regression or regression tree.
- 
-Bv, je hebt een binary classifier.
-Kies er een punt uit, neem sample data rond dat punt.
-Geef gewichten aan de datapunten, hoe dichter bij het "uit te leggen" punt, hoe groter het gewicht.
-(Most LIME implementations use an exponential smoothing kernel to do this).
-
-Op die dataset laat je je black box model zijn predicties doen (calculate it's probabilities).
-Uiteindelijk: sample from the perturbed dataset based on the weights.
-
-A simple ML algorithm is trained on this sample. Use for example LASSO regression. The output of this is a continous value representing the predicted probailities of the black box model. This provides us with a local decision boundary which can be easily inspected.
-
-Lime can also be applied on non-tabular data such as text or images. Non-tabular data changes how the perturbation is performed. 
-In case of text data, new texts are created by randomly removing words from the original text for example.
-For images, perturbing individual pixels does not make a lot of sence.
-Instead, groups of pixels in the image are perturbed at once by blanking them, in other words, removing them from the image.
-(Original LIME paprer Ribiero et. al)
-
-LIME is easy to understand and works on tabular data, text and images.
-
-ref. Python lime, Python eli5
-ref. R ...
-
-### 4.3 Shapley values
-We explain the use of Shapley values to interprete feature contributions in a black box machine learning model.
-
-This is not the origin of the Shapley value. 
-Shapley was an economist intrerested in game theory.
-We will focus on the game theoretical context first, to get a grasp of how it works.
-
-The Shapley value represents the payout for every player in a cooperative game. It can also be used to measure the contribution of a feature to a ML model.
-
-FI, Shapley won the Noble price for his contribution to game theory.
-
-It tries to access each player's contribution in a cooperative game.
-For example: an indoor soccer team. The goal is to find out how much each player contributes to the team.
-In game theory: this would be the "playoff". We will call it: "the marginal gain" or "contribution of each player".
-
-Assume, we have a characteristic function to assess the value of a soccer team.
-
-Adding one player A will give the team a value of 6.
-v({A}) = 6, where v is calles 'characteristic function'.
-
-We can try to complete the team by adding extra players.
-Adding extra players will increase the value of the team.
-However, players can have overlapping skill sets.
-
-Say that adding player B with player A, give us a value of the characteristic funtion of 10.
-- add player B
-  - v({A})=6,
-  - v({A, B}) = 10,
-  - B has a marginal contribution of 4.
-- add player C
-  - v({A, B, C}) = 12,
-  - C contributes 2 to the team.
- 
-Player C only contributes 2 to the team. 
-However, if this small value is due to player B, already being in the team before C, then we should take into account what would happen if he came in first.
-
-This is the only fair way to address all players payoffs.
-So, if we add C first, her marginal contribution is 4 and that of B is reduced to 2.
-
-If we want to be perfectly fair in our assessment, we should then look at all possible teams we can form with player C to know what value she really adds to the team.
-
-In other words, to know the contribution of C, we need to average her contribution in all formations of the team.
-
-To explain this, we need some combinatorial theory.
-Let's first go over some extra intuitions.
-
-1. It is important to see that only the players that were already in the team before C, matter. Not the order in which these were added. Whether A came first in the team, it doesn't matther. Thus, we only need to know hte value of adding C to a team with A and B once and weigh it with the number of teams we can form with A and B.
-2. All players that come after C are not important. But, we need to take into account that we could add players D and E in a different order an d it would not impact the marginal contribution of adding C to a team with A and B.
-
-Translate the intuition to a mathematical formula.
-
-relevant documentation.
+## 5. reading (optional)
 https://christophm.github.io/interpretable-ml-book/pdp.html
 
 
