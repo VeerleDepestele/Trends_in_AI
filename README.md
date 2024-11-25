@@ -65,7 +65,7 @@ We gaan werken met Google Colab en huggingface.
   - (coursera.org - Introduction to Prompt Injection Vulnerabilities)
 
 - Les 8
-  - les8_O_bias.md
+  - les8_0_bias.md
   - notebooks/les8_1_data_bias.ipynb
   - notebooks/les8_2_statistical_parity.ipynb
   - notebooks/les8_3_aif360_tutorial.ipynb
@@ -75,3 +75,24 @@ We gaan werken met Google Colab en huggingface.
   data:
     download van kaggle (zie ipynb)
     onder Documenten, op Chamilo: german.data, h181.zip, h192.zip (ref. medical_expenditure)
+
+- Les 9
+  - les9_0_introduction.md
+  - notebooks/les9_1_feature_importance_explainability_in_one_line.ipynb
+  - notebooks/les9_2_global_interpretability.ipynb
+  - notebooks/les9_3_local_interpretability.ipynb
+  - notebooks/les9_4_treeSHAP_toy_example.ipynb
+
+  referenties:
+  Om deze les te maken, gebruikte ik:
+  - https://www.bluecourses.com/ - Machine Learning Essentials - by Bart Baessens and Tim 
+    Verdonck.
+  - @book{leborgne2022fraud,
+    title={Reproducible Machine Learning for Credit Card Fraud Detection - Practical 
+    Handbook},
+    author={Le Borgne, Yann-A{\"e}l and Siblini, Wissam and Lebichot, Bertrand and 
+    Bontempi, Gianluca},
+    url={https://github.com/Fraud-Detection-Handbook/fraud-detection-handbook},
+    year={2022},
+    publisher={Universit{\'e} Libre de Bruxelles}
+    } 
