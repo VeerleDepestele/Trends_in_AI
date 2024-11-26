@@ -96,3 +96,8 @@ We gaan werken met Google Colab en huggingface.
     year={2022},
     publisher={Universit{\'e} Libre de Bruxelles}
     } 
+
+- Les 10
+  - notebooks/les10_0_shapley.md
+  - notebooks/les10_1_lime.md
+  - notebooks/les10_0_saliency_mappings.md
