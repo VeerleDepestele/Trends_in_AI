@@ -101,3 +101,11 @@ We gaan werken met Google Colab en huggingface.
   - notebooks/les10_0_shapley.md
   - notebooks/les10_1_lime.md
   - notebooks/les10_0_saliency_mappings.md
+
+- Les 11
+  - les11_AI_act.md
+
+- Les 12
+  - les12_0_ethiek_in_AI.md
+  - les12_1_ethiek_in_AI.pptx
+  - les12_2_AI_for_researchers.md
