@@ -19,7 +19,7 @@ https://github.com/cheahjs/free-llm-api-resources
 Zodra je tevreden bent en je de modelvereisten genoeg hebt afgebakend om te beginnen met ontwikkelen, is je eerste beslissing of je je eigen model vanaf nul wilt trainen of met een bestaand basismodel wilt werken. Over het algemeen begin je met een bestaand model, hoewel er enkele gevallen zijn waarin je het nodig kunt vinden om een model vanaf nul te trainen.
 
 ## Adapt and align model
-Met je model in handen is de volgende stap om de prestaties te beoordelen en indien nodig extra training uit te voeren voor jouw applicatie. Prompt engineering soms voldoende zijn om je model goed te laten presteren, dus je zult waarschijnlijk beginnen met in-context learning, met voorbeelden die passen bij je taak en gebruiksgeval. 
+Met je model in handen is de volgende stap om de prestaties te beoordelen en indien nodig extra training uit te voeren voor jouw applicatie. Prompt engineering kan soms voldoende zijn om je model goed te laten presteren, dus je zult waarschijnlijk beginnen met in-context learning, met voorbeelden die passen bij je taak en use case. 
 
 Er zijn echter nog steeds gevallen waarin het model misschien niet zo goed presteert als je nodig hebt, zelfs niet met één of een paar korte inferenties, en in dat geval kun je proberen je model te fine-tunen.
 
@@ -32,7 +32,7 @@ Deze aanpassings- en afstemmingsfase (adapt & align phase) van app-ontwikkeling 
 ## Application integration
 Wanneer je een model hebt dat voldoet aan je prestatiebehoeften én goed is afgestemd, kun je het implementeren in je infrastructuur en integreren met je applicatie. In dit stadium is een belangrijke stap om je model te optimaliseren voor implementatie. Dit kan ervoor zorgen dat je het gebruik van je computer resoources optimaliseert en de best mogelijke ervaring biedt voor de gebruikers van je applicatie.
 
-De laatste stap is om eventuele extra infrastructuur te overwegen die je applicatie nodig heeft om goed te functioneren. Er zijn enkele fundamentele beperkingen van LLM's die moeilijk te overwinnen zijn door alleen training, zoals hun neiging om informatie uit te vinden wanneer ze een antwoord niet weten, of hun beperkte vermogen om complexe redeneringen en wiskunde uit te voeren. In het laatste deel van deze cursus leer je enkele krachtige technieken die je kunt gebruiken om deze beperkingen te overwinnen.
+De laatste stap is om eventuele extra infrastructuur te overwegen die je applicatie nodig heeft om goed te functioneren. Er zijn enkele fundamentele beperkingen van LLM's die moeilijk te overwinnen zijn door alleen training, zoals hun neiging om informatie uit te vinden wanneer ze een antwoord niet weten, of hun beperkte vermogen om complexe redeneringen en wiskunde uit te voeren.
 
 
 

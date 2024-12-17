@@ -15,6 +15,7 @@ LLMs kunnen gebruikt worden voor:
      ![python_code_gemiddelde_kolom_dataframe](img/python_code_gemiddelde_kolom_dataframe.png)
 -  een gerichte taak, zoals het opvragen van informatie.
    Bv. je kan het model vragen om alle personen en plaatsen te identificeren die in een nieuwsartikel worden genoemd. Dit staat bekend als named entity recognition, een woordclassificatietaak. Het begrip van kennis, gecodeerd in de parameters van het model, stelt het in staat om deze taak correct uit te voeren en de gevraagde informatie aan je terug te geven.
+   
    ![NER](img/NER.png)
    
    ![NER2](img/NER2.png)
@@ -58,7 +59,7 @@ pros:
 
 cons:
 - Ze mogen niet worden geïnspecteerd, aangepast of op maat gemaakt voor verschillende toepassingen.
-- Ze niet altijd gratis beschikbaar, er een abonnement of betaling vereist zijn om ze te gebruiken.
+- Ze niet altijd gratis beschikbaar, er kan een abonnement of betaling vereist zijn om ze te gebruiken.
 - Gebruikers hebben ook geen controle over de gegevens die worden gebruikt om het model te trainen, wat betekent dat ze erop moeten vertrouwen dat de eigenaar van het model zich inzet voor gegevensprivacy en verantwoord gebruik van AI.
 
 Voorbeelden van populaire proprietary modellen zijn de modellen van OpenAI, Google Bard of Anthropic (Claude modellen).
