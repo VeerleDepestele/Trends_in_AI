@@ -1,8 +1,8 @@
 # Prompt Engineering
 
-In deze les gaan we een aantal prompt engineering principes gezien voor het gebruik van LLM's. In de voorbeelden gebruiken we ChatGPT en een Llama2 model.
+In deze les gaan we een aantal prompt engineering principes zien voor het gebruik van LLM's. In de voorbeelden gebruiken we ChatGPT en een Llama2 model.
 
-De inzichten in prompts wijzigen nog continue, maar toch zijn een aantal basisconcepten ondertussen te ontwaren.
+De inzichten in prompts wijzigen nog continu, maar toch zijn een aantal basisconcepten ondertussen te ontwaren.
 
 We vatten de prompt technieken samen in vijf categorieën. Een goede prompt gebruikt één of meerdere van deze categorieën.
 
@@ -21,7 +21,7 @@ https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/overview
 
 ### 1. context
 
-De context van een prompt beschrijft meestal op welke manier het LLM zich dient te gedragen, "Je bent een expert JavaScript developer", "Je bent een AI assistent die boeken aanraadt op basis van gebruikers voorkeuren", "Je bent een hogeschool lector die bachelorproefvoorstellen evalueert"
+De context van een prompt beschrijft meestal op welke manier het LLM zich dient te gedragen, "Je bent een expert JavaScript developer", "Je bent een AI assistent die boeken aanraadt op basis van gebruikersvoorkeuren", "Je bent een hogeschool lector die bachelorproefvoorstellen evalueert"
 
 ### 2. input data
 
@@ -39,9 +39,9 @@ In deze context spreken we van 'zero-shot prompting' (wanneer er geen voorbeeld 
 
 ### 5. constraints
 
-De constraints dienen om af te lijnen waartoe het LLM zich moet beperken. Dit kan zowel gaan om vormelijke beperkingen "Genereer enkel een JSON file met key 'boek' en key 'author'", "Maximaal 100 woorden lang", "in de stijl van Shakespeare"
+De constraints dienen om af te lijnen waartoe het LLM zich moet beperken. Dit kan zowel gaan om vormelijke beperkingen "Genereer enkel een JSON file met key 'boek' en key 'author'", "Maximaal 100 woorden lang", "in de stijl van Shakespeare",
 
-Maar ook inhoudelijk "Wees vriendelijk", "Eindig met een positieve noot", "Zorg dat de boeken van hetzelfde genre zijn".
+maar het kan ook over inhoudelijke beperkingen gaan: "Wees vriendelijk", "Eindig met een positieve noot", "Zorg dat de boeken van hetzelfde genre zijn".
 
 
 
@@ -62,7 +62,7 @@ Zorg dat de aanbevelingen in lijn zijn met de genres die de gebruiker graag lees
 
 ## role
 
-Bij de meer recente modellen (openAI, recente LLama modellen, ...), dien je in de 'message' zowel een rol als een context mee te geven.
+Bij de meer recente modellen (openAI, recente Llama modellen, ...), dien je in de 'message' zowel een rol als een context mee te geven.
 
 De mogelijke rollen zijn: `system`, `user` of `assistant`. 
 
