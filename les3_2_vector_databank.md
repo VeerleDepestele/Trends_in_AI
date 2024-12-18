@@ -64,7 +64,7 @@ Voordeel van het KNN-algoritme:
 Nadeel van het KNN-alogitme:
 - Dit schaalt absoluut niet als we immense hoeveelheden data beschouwen. We hebben nood aan andere algoritmen om buren te vinden.
 
-![KNN_runtime](/img/)
+![KNN_runtime](/img/KNN_runtime.png)
 
 ### Approximate Nearest Neighbour (ANN)
 
