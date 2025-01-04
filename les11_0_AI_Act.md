@@ -397,8 +397,6 @@ Why is transparency so importantfor AI and especially for generative AI?
 
 Let's take an example: Firefly is a generative AI tool that you can use to create or to edit pictures, like: "a dog in a sweater". When Firefly was released by Adobe, they were very transparent and open
 about the data they used. The advantage of being so transparent is that it creates more trust from the users. They have all the information they need to trust the product and to decide whether to use it or.
-Creating transparency is kind of an USP for you as well to create creating that
-
 
 Now, what are the obligations so by August 2026 um if you're building a gen AI-tool? It depends on the kind of AI system that you have.
 
@@ -437,6 +435,6 @@ To prepare for compliance with the AI act, a company can start today:
 
 1. be aware of the AI act and its implication in your organizationn
 2. list the AI systems used in the organization, for example licences like co-pilot and others,
-3. classify those AI system,
+3. classify those AI systems,
 4. define the role of your organization in the value chain (provider, deployer, both, other?)
 5. develop a compliance strategy.

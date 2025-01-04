@@ -248,7 +248,7 @@ De onderste laag (layer 0) bevat opnieuw alle nodes van voorgaande lagen en enke
 
 ![HNSW_search_5](img/HNSW_search_5.png)
 
-De manier waarop nodes toegewezen worden aan de verschillende lagen is door random een nummer te genereren (in het geval van 2 lagen, is dat random nummer 0, 1 of 2). Dit nummer kent de node aan die laag toe én ook aan alle lagen eronder. De kans om in een lagere laag terecht te komen is logatimisch kleiner dan die om een laag hoger terecht te komen.
+De manier waarop nodes toegewezen worden aan de verschillende lagen is door random een nummer te genereren (in het geval van 2 lagen, is dat random nummer 0, 1 of 2). Dit nummer kent de node aan die laag toe én ook aan alle lagen eronder. De kans om in een lagere laag terecht te komen is logatimisch groter dan die om een laag hoger terecht te komen.
 
 Bv. wanneer het random nummer 0 is, zal de node bestaan in laag 0.
 Wanneer het random nummer 2 is, zal de node bestaan in laag 0, 1 en 2.
