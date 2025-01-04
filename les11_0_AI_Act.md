@@ -127,7 +127,7 @@ they can workwithout having the risk of being fined.
 The working of the value chain will be illustrated by using an example of a typical use case.
 
 Use case: There's a company that wants to develop an AI system, an AI-HR tool used for the
-screening and ranking of applicants. For the technical work, it has the help of a **third party**. The **provider **then sells the
+screening and ranking of applicants. For the technical work, it has the help of a **third party**. The **provider** then sells the
 developed AI system to other companies that use the system within their organization. For the screening and the ranking of the applicants, also a big
 AI model is being used. 
 
