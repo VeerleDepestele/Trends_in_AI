@@ -103,7 +103,7 @@ We gaan werken met Google Colab en huggingface.
   - notebooks/les10_0_saliency_mappings.md
 
 - Les 11
-  - les11_AI_act.md
+  - les11_0_AI_act.md
 
 - Les 12
   - les12_0_ethiek_in_AI.md
