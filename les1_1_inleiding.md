@@ -7,6 +7,7 @@ Daarnaast komen enkele andere actuele onderwerpen aan bod, zoals de "AI Act" en 
 - prompt engineering
 - embeddings
 - vector databases
+- quantization
 - RAG and finetuning
 - langchain
 - AI act
@@ -21,6 +22,18 @@ Daarnaast komen enkele andere actuele onderwerpen aan bod, zoals de "AI Act" en 
 How did we came to Generative AI?
 ![history_generative_ai](img/history_generative_ai.png)
 Ondanks de hype die recent gecreëerd werd door de komst van "generative AI models", is deze technology reeds decenia in de maak, met de eerste onderzoeksinspanningen die dateren van in de jaren '60.
+
+### Turing test (1950)
+**"Can machines think?"**
+ref. [Computing Machinary and Intelligence, 1950, Alan Turing](https://courses.cs.umbc.edu/471/papers/turing.pdf) 
+ref. (https://cbmm.mit.edu/sites/default/files/documents/turing.pdf)
+
+De Turing test heeft als doel om te bepalen of een machine intelligent verdrag kan vertonen, gelijkwaardig aan dat van een mens.
+
+In de test beoordeelt een menselijke evaluator een teksttranscript van een gesprek in natuurlijke taal tussen een mens en een machine.
+
+De evaluator probeert te achterhalen welke van de twee de machine is, en de machine slaagt voor de test als de evaluotor hen niet betrouwbaar uit elkaar kan houden.
+
 ### Knowledge base - rule based AI ('50 - '60)
 De eerste prototypes van kunstmatige intelligentie ("artificial intelligence") bestonden uit "typewritten chatbots". Deze waren opgebouwd vanuit de gedocumenteerde kennis van een group van experten (een "knowledge base"). Deze kennis werd gerepresenteerd in een computer.
 De antwoorden in deze "typewritten chatbots" werden geactiveerd door trefwoorden die in de input tekst voorkwamen. Al snel werd duidelijk dat een dergelijke aanpak niet goed schaalde.
@@ -29,6 +42,8 @@ De eerste chatbot, ELIZA, werd in 1966 ontwikkeld door Joseph Weizenbaum in het 
 
 ![Eliza](img/Eliza.png)
 
+ref. [Eliza, a chatbot therapist](https://web.njit.edu/~ronkowit/eliza.html)
+
 (Hier is een mooi verhaal over de evolutie van chatbots:
 https://techacute.com/whats-the-first-chatbot-and-how-old-are-chatbots/)
 
@@ -36,6 +51,8 @@ https://techacute.com/whats-the-first-chatbot-and-how-old-are-chatbots/)
 Een keerpunt kwam in de jaren '90, met de toepassing van een statistische benadering van tekstanalyse. Dit leidde tot de ontwikkeling van nieuwe algoritmen, bekend onder de naam "machine learning", die in staat zijn patronen uit gegevens te leren zonder expliciet geprogrammeerd te zijn.
 Deze benadering stelt een machine in staat om menselijk taalbegrip te simuleren.
 Een statistisch model wordt getraind op tekst-label combinaties, waardoor het model onbekende input tekst kan classificeren met een vooraf gedefinieerd label dat de intentie van het bericht vertegenwoordigt. Op tekstueel vlak spreken we van NLP, 'natural language processing'.
+
+Een bekende NLP techniek is "Bag of Words".
 
 ### Neurale netwerken en moderne virtuele assistanten (+-2010)
 Recenter, heeft de technologische evolutie van de hardware - het is nu mogelijk om grotere hoeveelheden data te verwerken en om meer complexe berekeningen uit te voeren - onderzoek in vershillende domeinen van de artificiële intelligentie gestimuleerd. Dit heeft geleid to de ontwikkeling van meer geavanceerde machine learning algoritmen: neurale netwerken of deep learning algoritmen.
@@ -190,13 +207,16 @@ De meeste providers bieden wel een gratis optie om het model te leren kennen, ma
 
 De pricing wordt berekend a.d.h.v. het aantal tokens in de prompt in combinatie met het aantal tokens in de output.
 
-Een voorbeeld:
+Enkele voorbeelden:
+https://www.anthropic.com/pricing
 https://openai.com/api/pricing/
 
 ## verschillende manieren om de modellen te gebruiken.
 - web interface, bv. https://chatgpt.com/, https://claude.ai/
 - API key
-- lokaal, bv. check GPT4All, ollama.
+    -  lokaal, bv. check Ollama, LMStudio
+    -  gebruik een model dat in de cloud draait via een inference provider (Bv. HF Inference)
+    -  deploy in the cloud
 
 ## terminology of te onthouden
 | term                  | beschrijving                                                       | 
@@ -216,8 +236,3 @@ https://openai.com/api/pricing/
 - Cursus: "generative ai for beginners", https://microsoft.github.io/generative-ai-for-beginners/#/
 - deeplearning.ai - short courses
 - youtube: "Intro to large language models, Anrej Karpathy" -https://www.youtube.com/watch?v=zjkBMFhNj_g&t=1738s
-
-
-
-
-
