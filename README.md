@@ -13,7 +13,8 @@ Het cursusmateriaal is deels in het Nederlands en deels in het Engels.
   - les1_2_generative_ai_project_lifecycle.md
   - les1_3_scope_types_llms.md
   - notebooks/les1_4_praktisch.ipynb
-  
+  - les1_5_oefen.md
+ 
 - Les 2
   - notebooks/les2_0_prompting.ipynb
   - notebooks/les2_1_prompt_engineering_openai.ipynb
