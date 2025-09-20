@@ -1,5 +1,9 @@
 # 2324-trendsinai
 
+####################
+STATUS end 2024-2025
+####################
+
 De cursus zal in de loop van het academiejaar 2024-2025 hier verschijnen.
 Het zal een mix zijn van markdown files, python notebooks, powerpoint, externe links, enz.
 
