@@ -1,7 +1,7 @@
 # Inleiding
 In dit vak gaan we kijken naar recente ontwikkelingen op vlak van AI.
 We focussen op dé hype van het moment: generative AI.
-Daarnaast komen enkele andere actuele onderwerpen aan bod, zoals de "AI Act" en de interpreteerbaarheid (Explainability / Interpretability) van een model, alsook en ethiek & bias.
+Daarnaast komen enkele andere actuele onderwerpen aan bod, zoals de "AI Act" en de interpreteerbaarheid (Explainability / Interpretability) van een model, alsook ethiek & bias.
 
 ## Onderwerpen:
 - prompt engineering
@@ -19,7 +19,7 @@ Daarnaast komen enkele andere actuele onderwerpen aan bod, zoals de "AI Act" en 
 100% schriftelijk examen (1e en 2e zit) (virtuele campus: 100% mondeling exampen)
 
 ## Present day, generative AI
-How did we came to Generative AI?
+How did we get to Generative AI?
 ![history_generative_ai](img/history_generative_ai.png)
 Ondanks de hype die recent gecreëerd werd door de komst van "generative AI models", is deze technology reeds decenia in de maak, met de eerste onderzoeksinspanningen die dateren van in de jaren '60.
 
@@ -32,7 +32,7 @@ De Turing test heeft als doel om te bepalen of een machine intelligent verdrag k
 
 In de test beoordeelt een menselijke evaluator een teksttranscript van een gesprek in natuurlijke taal tussen een mens en een machine.
 
-De evaluator probeert te achterhalen welke van de twee de machine is, en de machine slaagt voor de test als de evaluotor hen niet betrouwbaar uit elkaar kan houden.
+De evaluator probeert te achterhalen welke van de twee de machine is, en de machine slaagt voor de test als de evaluator hen niet betrouwbaar uit elkaar kan houden.
 
 ### Knowledge base - rule based AI ('50 - '60)
 De eerste prototypes van kunstmatige intelligentie ("artificial intelligence") bestonden uit "typewritten chatbots". Deze waren opgebouwd vanuit de gedocumenteerde kennis van een group van experten (een "knowledge base"). Deze kennis werd gerepresenteerd in een computer.
@@ -169,7 +169,7 @@ Een voorbeeld:
 Je kan er zelf mee experimenteren op: https://platform.openai.com/tokenizer
 
 #### predicting output tokens
-Gegeven een reeks van tokens als input, dan voorspelt het model het volgdende token. Dit wordt dan weer als input gebruikt om het daaropvolgende token te voorspellen.
+Gegeven een reeks van tokens als input, dan voorspelt het model het volgende token. Dit wordt dan weer als input gebruikt om het daaropvolgende token te voorspellen.
 
 #### selection process, probability distribution
 Het uitvoertoken wordt door het model gekozen op basis van de kans dat het voorkomt na de huidige tokenreeks. Dit komt omdat het model een probabiliteitsdistributie genereert over alle mogelijke volgende tokens, berekend op basis van zijn training data. 
@@ -193,7 +193,7 @@ Vaak zijn er situaties waarin het model niet meteen het gewenste resultaat lever
 We zullen hier verder uitgebreid op ingaan.
 
 ## RAG, finetuning and agents
-Ontwikkelaars hebben ontdekt dat naarmate de schaal van foundation modellen groeit van honderden miljoenen parameters tot miljarden, zelfs honderden miljarden, ook het subjectieve begrip van taal dat een model bezit toeneemt. Dit taalbegrip, opgeslagen in de parameters van het model, is wat processen, redeneren en uiteindelijk de taken die je het geeft, oplost. Maar, het is ook waar dat kleinere modellen kunnen worden gefinetuned om goed te presteren op specifieke gerichte taken.
+Ontwikkelaars hebben ontdekt dat naarmate de schaal van foundation modellen groeit van honderden miljoenen parameters tot miljarden, zelfs honderden miljarden, ook het subjectieve begrip van taal dat een model bezit toeneemt. Dit taalbegrip, opgeslagen in de parameters van het model, is wat kan processen en "redeneren" en uiteindelijk de taken die je het geeft, oplost. Maar, het is ook waar dat kleinere modellen kunnen worden gefinetuned om goed te presteren op specifieke gerichte taken.
 
 Er zijn vershillende manieren om extra informatie aan modellen toe te voegen:
 - RAG of Retrieval Augmented Generation,
@@ -217,8 +217,9 @@ https://openai.com/api/pricing/
     -  lokaal, bv. check Ollama, LMStudio
     -  gebruik een model dat in de cloud draait via een inference provider (Bv. HF Inference)
     -  deploy in the cloud
+- Eigen installatie 
 
-## terminology of te onthouden
+## terminologie (te onthouden)
 | term                  | beschrijving                                                       | 
 |:-----------------|:----------------------------------------------------------------| 
 | training              | het leren van de parameters                                        | 
@@ -235,4 +236,5 @@ https://openai.com/api/pricing/
 - Cursus: "generative-ai-with-llms", www.coursera.org
 - Cursus: "generative ai for beginners", https://microsoft.github.io/generative-ai-for-beginners/#/
 - deeplearning.ai - short courses
+
 - youtube: "Intro to large language models, Anrej Karpathy" -https://www.youtube.com/watch?v=zjkBMFhNj_g&t=1738s
