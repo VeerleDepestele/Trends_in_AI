@@ -6,7 +6,7 @@ Google Colab is een cloud-based service die je toelaat om code te schrijven en t
 
 Surf naar https://colab.research.google.com/
 
-Colab maakt gebruik van Goodle Drive om files in op te slaan. Je dient een Gmail account te hebben.
+Colab maakt gebruik van Google Drive om files in op te slaan. Je dient een Gmail account te hebben.
 Indien je er geen hebt, maak je een gmail account aan.
 
 In Colab, klik op het folder-icoontje en log in met je Gmail account.
