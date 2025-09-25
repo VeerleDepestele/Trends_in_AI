@@ -32,7 +32,7 @@ We zullen met de huggingface hub werken om verschillende modellen te gebruiken.
 ![add_google_drive_to_colab_3](/img/add_google_drive_to_colab_3.png)
 - Klik op de afbeelding van de sleutel, daarna '+ Add new secret'. De 'Name' dient 'HF_TOKEN' te zijn, in 'Value' kopieer je je hugginface token.
 - Eens je secret is ingesteld, kan je hem in een Colab notebook gebruiken door de volgende code uit te voeren:
-  from google.colab import userdata
+  from google.colab import userdata \
   userdata.get('secretName')
 - De code om een model op een vlotte manier te gebruiken, vind je in de 'Model Card' van het geselecteerde model, selecteer 'Deploy' en kies voor Inference API (Serverless).
 - Interessante pagina: https://huggingface.co/docs/api-inference/.
