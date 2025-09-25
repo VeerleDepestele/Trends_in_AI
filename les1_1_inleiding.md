@@ -55,7 +55,7 @@ Een statistisch model wordt getraind op tekst-label combinaties, waardoor het mo
 Een bekende NLP techniek is "Bag of Words".
 
 ### Neurale netwerken en moderne virtuele assistanten (+-2010)
-Recenter, heeft de technologische evolutie van de hardware - het is nu mogelijk om grotere hoeveelheden data te verwerken en om meer complexe berekeningen uit te voeren - onderzoek in vershillende domeinen van de artificiële intelligentie gestimuleerd. Dit heeft geleid to de ontwikkeling van meer geavanceerde machine learning algoritmen: neurale netwerken of deep learning algoritmen.
+Meer recent heeft de technologische evolutie van de hardware - het is nu mogelijk om grotere hoeveelheden data te verwerken en om meer complexe berekeningen uit te voeren - onderzoek in vershillende domeinen van de artificiële intelligentie gestimuleerd. Dit heeft geleid to de ontwikkeling van meer geavanceerde machine learning algoritmen: neurale netwerken of deep learning algoritmen.
 
 Neurale netwerken (in het bijzonder Recurrent Neural Networks - RNNs) hebben de verwerking van natuurlijke taal aanzienlijk verbeterd. Zij maken het mogelijk om tekst als het ware, te interpreteren. Om de betekenis van een woord in te schatten, wordt de context van de zin waarin het voorkomt, in rekening gebracht.
 
