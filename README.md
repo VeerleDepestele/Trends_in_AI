@@ -16,7 +16,7 @@ Het cursusmateriaal is deels in het Nederlands en deels in het Engels.
   - les1_5_oefen.md
  
 - Les 2
-  - notebooks/les2_0_prompting.ipynb
+  - les2_0_prompting_engineering.ipynb
   - notebooks/les2_1_prompt_engineering_openai.ipynb
   - notebooks/les2_2_prompt_engineering_llama.ipynb
 
