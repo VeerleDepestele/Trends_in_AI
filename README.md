@@ -8,6 +8,10 @@ Het cursusmateriaal is deels in het Nederlands en deels in het Engels.
 
 
 - Les 1
+  Overzicht:
+  - Chamilo - documenten - slides - Trends in AI H01
+  
+  Les:
   - les1_0_praktisch.md
   - les1_1_inleiding.md
   - les1_2_generative_ai_project_lifecycle.md
@@ -16,16 +20,23 @@ Het cursusmateriaal is deels in het Nederlands en deels in het Engels.
   - les1_5_oefen.md
  
 - Les 2
+  Overzicht:
+  - Chamilo - documenten - slides - Trends in AI H02
+  
+  Les:
   - les2_0_prompting_engineering.ipynb
   - notebooks/les2_1_prompt_engineering_openai.ipynb
   - notebooks/les2_2_prompt_engineering_llama.ipynb
 
 - Les 3
-  - les3_0_quantization.md
+  Overzicht:
+  - Chamilo - documenten - slides - Trends in AI H03
+  
+  Les:
   - notebooks/les3_1_embeddings.ipynb
   - les3_2_vectorstores.md
 
-  data:
+  Data:
     onder Documenten, op Chamilo
 
   referenties:
@@ -37,6 +48,8 @@ Het cursusmateriaal is deels in het Nederlands en deels in het Engels.
   - notebooks/les3_1_navigable_small_world.ipynb
   - notebooks/les3_2_navigable_small_world_solution.ipynb
   - notebooks/les4_3_pinecone_semantic_search.ipynb
+  - les3_0_quantization.md
+  
   
 - Les 5
   - les5_0_LLM_powered_applications.md
