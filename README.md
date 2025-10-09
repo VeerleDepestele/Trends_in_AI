@@ -34,7 +34,7 @@ Het cursusmateriaal is deels in het Nederlands en deels in het Engels.
   
   Les:
   - notebooks/les3_1_embeddings.ipynb
-  - les3_2_vectorstores.md
+  - les3_2_vector_databank.md
 
   Data:
     onder Documenten, op Chamilo
