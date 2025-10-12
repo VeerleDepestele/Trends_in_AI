@@ -46,8 +46,9 @@ Het cursusmateriaal is deels in het Nederlands en deels in het Engels.
 - Les 4
   - les3_2_vectorstores.md -> vervolg
   - notebooks/les4_0_pinecone_semantic_search.ipynb
-  - notebooks/les4_1_langchain_RAG_project_exercise.ipynb
-  - notebooks/les4_2_langchain_RAG_project_completed.ipynb
+  - notebooks/les4_1_langchain_project.ipynb
+  - notebooks/les4_2_langchain_RAG_project_exercise.ipynb
+  - notebooks/les4_3_langchain_RAG_project_completed.ipynb
 
   data:
   onder Documenten, op Chamilo (lbdl.pdf)
