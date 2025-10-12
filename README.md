@@ -45,18 +45,18 @@ Het cursusmateriaal is deels in het Nederlands en deels in het Engels.
 
 - Les 4
   - les3_2_vectorstores.md -> vervolg
-  - notebooks/les3_1_navigable_small_world.ipynb
-  - notebooks/les3_2_navigable_small_world_solution.ipynb
-  - notebooks/les4_3_pinecone_semantic_search.ipynb
-  - les3_0_quantization.md
+  - notebooks/les4_0_pinecone_semantic_search.ipynb
+  - notebooks/les4_1_langchain_RAG_project_exercise.ipynb
+  - notebooks/les4_2_langchain_RAG_project_completed.ipynb
+
+  data:
+  onder Documenten, op Chamilo (lbdl.pdf)
   
   
 - Les 5
   - les5_0_LLM_powered_applications.md
-  - notebooks/les5_1_langchain_RAG_project_exercise.ipynb
+  - les3_0_quantization.md
 
-  data:
-    onder Documenten, op Chamilo (lbdl.pdf)
 
   referenties:
   - coursera.org: Generative AI with Large Language Models
