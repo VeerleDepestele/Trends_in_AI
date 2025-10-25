@@ -64,11 +64,13 @@ Het cursusmateriaal is deels in het Nederlands en deels in het Engels.
 
   - Les6_0_quantization.md
   - notebooks/Les6_1_quantization_in_depth.ipynb
+  - notebooks/Les6_quantization_in_depth_1 .. notebooks/Les6_quantization_in_depth_10
 
   referenties:
   - deeplearning.ai: Quantization in depth
 
 - Les 7
+  - les7_0_finetuning_and_evaluation.md
   - les7_0_prompt_injection.md
   - les7_1_adversarial_ai.md
   - les7_2_RLHF.md
