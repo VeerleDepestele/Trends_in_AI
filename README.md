@@ -56,17 +56,17 @@ Het cursusmateriaal is deels in het Nederlands en deels in het Engels.
   
 - Les 5
   - les5_0_LLM_powered_applications.md
-  - les3_0_quantization.md
-
 
   referenties:
   - coursera.org: Generative AI with Large Language Models
 
 - Les 6
-  - les6_0_finetuning_and_evaluation.md
+
+  - Les6_0_quantization.md
+  - notebooks/Les6_1_quantization_in_depth.ipynb
 
   referenties:
-  - coursera.org: Generative AI with Large Language Models
+  - deeplearning.ai: Quantization in depth
 
 - Les 7
   - les7_0_prompt_injection.md
