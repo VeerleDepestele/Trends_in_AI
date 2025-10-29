@@ -3,11 +3,14 @@ import matplotlib.pyplot as plt
 from matplotlib.colors import ListedColormap
 import torch
 
+
+
 def plot_matrix(tensor, ax, title, vmin=0, vmax=1, cmap=None):
     """
     Plot a heatmap of tensors using seaborn
     """
     sns.heatmap(tensor.cpu().numpy(), ax=ax, vmin=vmin, vmax=vmax, cmap=cmap, annot=True, fmt=".2f", cbar=False)
+
     ax.set_title(title)
     ax.set_yticklabels([])
     ax.set_xticklabels([])

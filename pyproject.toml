@@ -1,0 +1,12 @@
+[project]
+name = "trends-in-ai"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "ipykernel>=7.1.0",
+    "numpy==2.2.6",
+    "seaborn>=0.13.2",
+    "torch==2.8.0",
+]
