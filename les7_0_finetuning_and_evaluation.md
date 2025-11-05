@@ -681,7 +681,7 @@ Instead you can save your result locally, by using "save_pretrained(choose_a_loc
 Running the code with Colab, needs using the GPU.
 
 ## 5. FAQ van openai
-Know that you know about finetuning and RAG, the follwoing question may arrise:
+Now that you know about finetuning and RAG, the follwoing question may arrise:
 "When should I use fine-tuning vs embeddings / retrieval augmented generation?"
 
 A relevant video explaining how to make a choice can be found on:
