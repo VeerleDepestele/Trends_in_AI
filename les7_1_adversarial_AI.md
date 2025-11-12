@@ -473,9 +473,9 @@ In particular, we'll be focussing on automating prompt injections.
 
 Automated approaches:
 
-1. Focus on the list of manually defined injection techniques and automate the detection of successfull injections
-2. Using the library of prompts and automate the detection of injections,
-(3. Giskard's open source LLM scan (a tool for automating this process))
+- 1. Focus on the list of manually defined injection techniques and automate the detection of successfull injections
+- 2. Using the library of prompts and automate the detection of injections,
+- (3. Giskard's open source LLM scan (a tool for automating this process))
 
 The application is (again) a customer support bot for Zephyr Bank.
 We can perform prompt injection by manually writing some special crafted inputs.
