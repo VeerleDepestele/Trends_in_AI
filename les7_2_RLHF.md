@@ -5,7 +5,7 @@
 LLMs are trained on a large amount of data from the internet. It contains alls sorts of information.
 Thus, it can generate results that are harmful, false or unhelpful.
 
-RLHF is an important tuninig technique that has been crititcal to align an LLM's output with human preferences and values.
+RLHF is an important tuning technique that has been crititcal to align an LLM's output with human preferences and values.
 
 It can be useful, even if you are not training an LLM from scratch. You can tune it to the behaviour you want to set.
 
@@ -60,7 +60,7 @@ You need to be clear about this, so you can provide specific instructions and ch
 
 ### 2. Use the preference dataset to train a reward model.
    
-Use the dataset to train a reward model. We want the model to input a prompt and completion, and return a scalar value indicating how good the completion for the given prompt. The reward model is essentially a regression model, it outputs numbers. It is trained on a preference dataset, incorporating the prompt and 2 candidates: the winning and the loosing candidate.
+Use the dataset to train a reward model. We want the model to input a prompt and completion, and return a scalar value indicating how good the completion is for the given prompt. The reward model is essentially a regression model, it outputs numbers. It is trained on a preference dataset, incorporating the prompt and 2 candidates: the winning and the loosing candidate.
 
 Here's how chatGPT explains it:
 
