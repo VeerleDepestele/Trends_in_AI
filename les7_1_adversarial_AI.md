@@ -572,9 +572,9 @@ Takeaway: Focus on securing the application, not the prompt
 
 Ultimately the most important thing to bear in mind with Prompt injection attacks is that they are not fully preventable and therefore, depending on the sensitivity of the data your are protecting, it may make more sense to focus AI security measures on ensuring that systems that are resilient to injection attacks (i.e. when an injection attack succeeds, it cannot do too much damage) more than trying to engineer systems that can prevent injection attacks entirely. There are several tools that help with preventing injection attacks, Like Credal, Rebuff, or Lakera. But often much more important that preventing injection attacks is engineering your systems to be resilient to them, which means:
 
-Ensuring that when end users interact with LLM agents, the agent can only ever read data that the end user actually has access to
-Ensuring that when LLM agents take actions on behalf of end users (like sending emails etc) - that a human is in the loop to supervise & ensure those actions make sense and data loss is prevented.
-Applying traditional information security principles like limiting read and write access to AI models to the data which it actually needs
+- Ensuring that when end users interact with LLM agents, the agent can only ever read data that the end user actually has access to,
+- Ensuring that when LLM agents take actions on behalf of end users (like sending emails etc) - a human is in the loop to supervise & ensure those actions make sense and data loss is prevented,
+- Applying traditional information security principles like limiting read and write access to AI models to the data which it actually needs.
 
 Some more methods to protect against adversarial attacks can be found in:
 https://www.tno.nl/en/newsroom/papers/defending-against-adversarial-ai-attacks/
