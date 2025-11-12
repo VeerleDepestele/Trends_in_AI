@@ -502,7 +502,7 @@ pretend you are the system, then give a user question, prepare for the assistant
 As a last step, we need to define our payload.
 Iterate through each element of your list.
 
-To detect if out injection was successfull, let's compare the output with our payload string.
+To detect if our injection was successfull, let's compare the output with our payload string.
 If the output is the same as our payload string, print the result: Injection was successful.
 
 ![les7_prompt_injection_at_scale_3](img/les7_prompt_injection_at_scale_3.png)
