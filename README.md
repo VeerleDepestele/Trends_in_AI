@@ -72,16 +72,18 @@ Het cursusmateriaal is deels in het Nederlands en deels in het Engels.
 - Les 7
   - les7_0_finetuning_and_evaluation.md
 
-  referenties:
-  - deeplearning.ai - Red Teaming LLM Applications
-  - (coursera.org - Introduction to Prompt Injection Vulnerabilities)
-
 - Les 8
   - les8_0_prompt_injection.md
   - les8_1_adversarial_ai.md
   - les8_2_RLHF.md
   - les8_3_AI_gateways
 
+referenties:
+  - deeplearning.ai - Red Teaming LLM Applications
+  - (coursera.org - Introduction to Prompt Injection Vulnerabilities)
+  - Bachelorproef Aron Van Daele: "Effectieve integratie van AI-gateways voor het veilig toegankelijk   maken van Large Language Models en vector databases binnen API-architecturen."
+  Github repo: https://github.com/aronvandaele/Bachelorproef_AI-Gateways
+  
 - Les 9
   - les9_0_bias.md
   - notebooks/les8_1_data_bias.ipynb
