@@ -81,6 +81,7 @@ Het cursusmateriaal is deels in het Nederlands en deels in het Engels.
 referenties:
   - deeplearning.ai - Red Teaming LLM Applications
   - (coursera.org - Introduction to Prompt Injection Vulnerabilities)
+  - deeplearning.ai - Reinforcement learning from human feedback (hier vind je   een voorbeeld a.d.h.v. VertexAI)
   - Bachelorproef Aron Van Daele: "Effectieve integratie van AI-gateways voor het veilig toegankelijk   maken van Large Language Models en vector databases binnen API-architecturen."
   Github repo: https://github.com/aronvandaele/Bachelorproef_AI-Gateways
   
