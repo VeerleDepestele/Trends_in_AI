@@ -92,7 +92,7 @@ The first step is the data bias check, which is a comparison of the distribution
 Example of intervention: collecting more data to find evidence of unfair bias.
 
 When checking a sensitive variable (e.g. gender), we compare 
-- its volume wrt the total volume (eg do males and females follow the popluation distribution?, If not, is there a plausible reson?)
+- its volume wrt the total volume (eg do males and females follow the popluation distribution?, If not, is there a plausible reason?)
 - to the volume in the target only (e.g., is it the same proportion as in total? If not, is there an explanation for the difference?)
 
 ref. notebooks/data_bias.ipynb
