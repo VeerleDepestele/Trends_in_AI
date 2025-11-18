@@ -29,7 +29,7 @@ It is a software used in the US to assess the recidivism risk of defendants. Jul
 
 In other words, the software had a higher **false positive rate** for black defendants and a **higher false negative rate** for white defendants.
 
-### 2.2 Amazone gender bias hiring system¶
+### 2.2 Amazon gender bias hiring system¶
 
 Another example is the AI-based hiring system used by Amazon for assessing the resumes of job applicants. It was observed that the evaluations assigned to applicants’ resumes exhibited gender bias. Women received lower scores for technical positions compared to the male applicants. 
 

@@ -78,20 +78,20 @@ Het cursusmateriaal is deels in het Nederlands en deels in het Engels.
   - les8_2_RLHF.md
   - les8_3_AI_gateways
 
-referenties:
-  - deeplearning.ai - Red Teaming LLM Applications
-  - (coursera.org - Introduction to Prompt Injection Vulnerabilities)
-  - deeplearning.ai - Reinforcement learning from human feedback (hier vind je   een voorbeeld a.d.h.v. VertexAI)
-  - Bachelorproef Aron Van Daele: "Effectieve integratie van AI-gateways voor het veilig toegankelijk   maken van Large Language Models en vector databases binnen API-architecturen."
-  Github repo: https://github.com/aronvandaele/Bachelorproef_AI-Gateways
+  referenties:
+    - deeplearning.ai - Red Teaming LLM Applications
+    - (coursera.org - Introduction to Prompt Injection Vulnerabilities)
+    - deeplearning.ai - Reinforcement learning from human feedback (hier vind je   een voorbeeld a.d.h.v. VertexAI)
+    - Bachelorproef Aron Van Daele: "Effectieve integratie van AI-gateways voor het veilig toegankelijk   maken van Large Language Models en vector databases binnen API-architecturen."
+    Github repo: https://github.com/aronvandaele/Bachelorproef_AI-Gateways
   
 - Les 9
   - les9_0_bias.md
-  - notebooks/les8_1_data_bias.ipynb
-  - notebooks/les8_2_statistical_parity.ipynb
-  - notebooks/les8_3_aif360_tutorial.ipynb
-  - notebooks/les8_4_salary_prediction_classification.ipynb
-  - notebooks/les8_4_salary_prediction_classification_reworked.ipynb
+  - notebooks/les9_1_data_bias.ipynb
+  - notebooks/les9_2_statistical_parity.ipynb
+  - notebooks/les9_3_aif360_tutorial.ipynb
+  - notebooks/les9_4_salary_prediction_classification.ipynb
+  - notebooks/les9_4_salary_prediction_classification_reworked.ipynb
 
   data:
     download van kaggle (zie ipynb)
