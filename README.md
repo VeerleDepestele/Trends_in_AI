@@ -98,7 +98,7 @@ Het cursusmateriaal is deels in het Nederlands en deels in het Engels.
     onder Documenten, op Chamilo: german.data, h181.zip, h192.zip (ref. medical_expenditure)
 
 - Les 10
-  - les10_0_introduction.md
+  - les10_0_explainability.md
   - notebooks/les10_1_feature_importance_explainability_in_one_line.ipynb
   - notebooks/les10_2_global_interpretability.ipynb
   - notebooks/les10_3_local_interpretability.ipynb
