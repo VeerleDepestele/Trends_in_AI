@@ -176,7 +176,7 @@ Here are some examples:
 ### 5.1 pre-processing methods 
 #### 5.1.1 pre-processing method: labeling and perturbation
 
-These mitigation methods that apply changes to the values of the training data. Changes have been applied 
+These are mitigation methods that apply changes to the values of the training data. Changes have been applied 
 - to the ground truth labels (relabeling) or
 - to the remaining features (perturbation).
 
