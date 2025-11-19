@@ -451,6 +451,8 @@ The predictor and adversary improve by “competing.”
 
 Compositional approaches combat bias by training multiple classification models. Predictions can then be made by a specific classification model for each population group (e.g., privileged and unprivileged)  or in an ensemble fashion (i.e., a voting of multiple classification models at the same time) 
 
+### 5.2.4 Train Then Mask
+"Train Then Mask", ref. https://arxiv.org/abs/1811.04973
 
 ## 5.3 post-processing methods
 
@@ -461,9 +463,6 @@ Input correction approaches apply a modification step to the testing data. This 
 
 ### 5.3.2 post-processing method: output correction
 The latest stage of applying bias mitigation methods is the correction of the output. In particular, the predicted labels are modified.
-
-### 5.3.3 probably a post-processing method:
-"Train Then Mask", ref. https://arxiv.org/abs/1811.04973
 
 
 ## 6. tools
