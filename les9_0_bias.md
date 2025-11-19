@@ -383,7 +383,7 @@ It’s not a penalty — it’s a hard rule.
 
 #### 5.2.2 in-processing method: adversarial learning
 
-Adversarial learning simultaneously trains classification models and their adversaries [92]. While the classification model is trained to predict ground truth values, the adversary is trained to exploit fairness issues. Both models then compete against each other to improve their performance.
+Adversarial learning simultaneously trains classification models and their adversaries. While the classification model is trained to predict ground truth values, the adversary is trained to exploit fairness issues. Both models then compete against each other to improve their performance.
 
 #### 5.2.3 in-processing method: compositional
 
