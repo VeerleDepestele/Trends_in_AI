@@ -180,13 +180,73 @@ These are mitigation methods that apply changes to the values of the training da
 - to the ground truth labels (relabeling) or
 - to the remaining features (perturbation).
 
-##### 5.1.1.1 relabeling methode: massaging
+##### 5.1.1.1 relabeling method: massaging
 An example of a relabling method is "massaging".
 
 In the first stage, “massaging” uses a ranker to determine the best candidates for relabeling. In particular, instances close to the decision boundary are selected to minimize the negative impact of relabeling on accuracy. Typically, an equal amount of instances with positive and negative labels are selected, according to their rank and their labels are switched.
 
+Here is an example dataset to demonstrate the method:
+
+| id | group | score | original_label | massaged_label |
+| -- | ----- | ----- | -------------- | -------------- |
+| 1  | A     | 0.92  | 1              | 1              |
+| 2  | B     | 0.88  | 1              | 1              |
+| 3  | A     | 0.63  | 0              | **1** ⬆️       |
+| 4  | B     | 0.61  | 1              | 1              |
+| 5  | A     | 0.59  | 0              | **1** ⬆️       |
+| 6  | B     | 0.57  | 1              | **0** ⬇️       |
+| 7  | A     | 0.56  | 0              | 0              |
+| 8  | B     | 0.54  | 1              | **0** ⬇️       |
+| 9  | A     | 0.31  | 0              | 0              |
+| 10 | B     | 0.28  | 0              | 0              |
+
+
 ##### 5.1.1.2 relabeling methode: based on k-nearest neighbors
 Another relabeling approach relabels instances based on their k-nearest neighbors, such that similar individuals receive similar labels.
+
+Here is an example dataset to demonstrate the method:
+
+| id | group | x   | y   | original_label                    |
+| -- | ----- | --- | --- | --------------------------------- |
+| 1  | A     | 1.0 | 1.2 | 0                                 |
+| 2  | A     | 1.2 | 1.1 | 0                                 |
+| 3  | A     | 1.1 | 1.3 | 0                                 |
+| 4  | B     | 3.0 | 3.2 | 1                                 |
+| 5  | B     | 3.2 | 3.0 | 1                                 |
+| 6  | B     | 3.1 | 3.1 | 1                                 |
+| 7  | A     | 1.3 | 1.0 | 0                                 |
+| 8  | B     | 2.1 | 2.2 | **0** ← suspicious / inconsistent |
+
+Based on the Eucledian distance (d(p,q)=sqrt((x2​−x1​)^2+(y2​−y1​)^2)), point 8 is located near the B group cluster (points 4, 5, 6), but it's original label is 0, while it's neighbours have label 1.
+
+To apply k-NN relabeling, choose k=3.
+
+| id | distance to 8 |
+| -- | ------------- |
+| 3  | **1.345**     |
+| 4  | **1.345**     |
+| 6  | **1.345**     |
+| 5  | **1.361**     |
+| 2  | 1.421         |
+| 7  | 1.442         |
+| 1  | 1.487         |
+
+Notice:
+
+Point 3 (A, label 0) is equally close as point 4/6, but the k nearest neighbors (k=3) are:
+
+- 3 (distance 1.345) — label 0
+- 4 (distance 1.345) — label 1
+- 6 (distance 1.345) — label 1
+
+If using k=3, the labels among neighbors = {0, 1, 1} → majority = 1
+→ Point 8 is relabeled to 1.
+
+If using k=5, then neighbors would include: 5, 2
+→ Labels: {0, 1, 1, 1, 0}
+→ Still majority = 1.
+
+So relabeling is consistent.
 
 #### 5.1.2 pre-processing method: sampling
 
@@ -196,7 +256,7 @@ Sampling methods change the training data by changing the distribution of sample
 When using "Reweighing", each instance receives a weight according to its label and protected attribute (e.g., instances in the unprivileged group and positive label receive a higher weight, as this is less likely). In the training process of classification models, a higher instance weight causes higher losses when misclassified. 
 
 ##### 5.1.2.2 sampling method: downsampling / upsampling
-Other sampling strategies include the removal of data points (downsampling)  or the addition of new data points (upsampling). Popular methods for upsamplig are oversampling for duplicating instances of the minority group  and the use of SMOTE . SMOTE does not duplicate instances but generates synthetic ones in the neighborhood of the minority group
+Other sampling strategies include the removal of data points (downsampling)  or the addition of new data points (upsampling). Popular methods for upsamplig are oversampling for duplicating instances of the minority group  and the use of SMOTE. SMOTE does not duplicate instances but generates synthetic ones in the neighborhood of the minority group.
 
 #### 5.1.3 pre-processing method: latent variables
 Latent variables describe the augmentation of training data with additional features that are preferably unbiased.
@@ -204,7 +264,122 @@ Latent variables describe the augmentation of training data with additional feat
 ### 5.2 in-processing methods
 #### 5.2.1 in-processing method: regularization and constraints
 
-Regularization and constraints are both approaches that apply changes to the learning algorithm’s loss function. Regularization adds a term to the loss function. While the original loss function is based on accuracy metrics, the purpose of a regularization term is to penalize discrimination (i.e., discrimination leads to a higher loss of the ML algorithm). Constraints, however, determine specific bias levels (according to loss functions) that cannot be breached during training.
+Regularization and constraints are both approaches that apply changes to the learning algorithm’s loss function. Regularization adds a term to the loss function. While the original loss function is based on accuracy metrics, the purpose of a regularization term is to penalize discrimination (i.e., discrimination leads to a higher loss of the ML algorithm). 
+
+Constraints, however, determine specific bias levels (according to loss functions) that cannot be breached during training.
+
+Here's how ChatGPT illustrates it:
+
+**The Core Idea**
+
+Both methods modify the learning algorithm itself, rather than modifying the data (pre-processing) or adjusting predictions afterward (post-processing).
+
+The model is trained to minimize a loss function:
+
+Loss = PredictionError
+
+In normal machine learning, this loss measures only accuracy (errors, cross-entropy, etc.).
+
+Bias-mitigating in-processing methods change this loss so that the model must care not only about accuracy, but also about fairness.
+
+**1. Regularization: Add a penalty term to the loss**
+*Intuition*
+
+You tell the model:
+
+“It’s not enough to be accurate — if you become discriminatory, you’ll get penalized.”
+
+So you add a fairness penalty to the loss.
+
+New loss function:
+Loss = PredictionError + 𝜆 * FairnessPenalty
+
+Where:
+
+PredictionError → normal loss, e.g., cross-entropy
+
+FairnessPenalty → e.g. demographic disparity, difference in positive rates, etc.
+
+λ (lambda) → strength of fairness regularization
+
+- Large λ = fairness is strongly enforced
+- Small λ = accuracy plays a bigger role
+
+*Here is an example with numbers:*
+
+Without fairness:
+
+Accuracy loss = 0.20
+
+Fairness penalty:
+
+Bias measure = 0.10
+
+λ = 3
+
+Total loss with fairness regularization:
+
+0.20 + 3 * 0.10 = 0.50
+
+The optimizer will avoid models that have both:
+
+high prediction error AND high bias. It searches for a model with low error AND low bias.
+
+*Analogy*
+
+It's like telling a student:
+
+“Your grade = exam score + penalty for cheating.”
+
+They can’t just maximize exam score; they also must avoid cheating.
+
+**2. Constraints: Forbid certain bias levels outright**
+
+Instead of penalizing discrimination, you set a rule:
+
+“The model is not allowed to exceed a specific level of unfairness.”
+
+Training becomes an optimization problem with a constraint:
+
+Minimize: PredictionError
+
+Subject to: FairnessMetric ≤ 𝜖
+
+Where:
+
+ε is the maximum allowed discrimination
+
+The model can choose any parameters as long as it stays under this threshold.
+
+*Toy example*
+
+You impose:
+
+Difference in positive rates between groups ≤ 0.05.
+
+During training:
+
+If a candidate model causes a difference of 0.10 → ❌ rejected
+
+If a candidate model causes a difference of 0.03 → ✔ allowed
+
+The optimizer must find the best model (lowest error) within the feasible fair region.
+
+*Analogy*
+
+Like telling a student:
+
+“You may not cheat more than 5%. If you do, you fail immediately.”
+
+It’s not a penalty — it’s a hard rule.
+
+*Key Difference*
+
+| Method             | What it does                              | How it impacts training                                                                                 |
+| ------------------ | ----------------------------------------- | ------------------------------------------------------------------------------------------------------- |
+| **Regularization** | Adds a *penalty* term to the loss         | The model *prefers* less discriminatory solutions but can still be slightly unfair if accuracy benefits |
+| **Constraint**     | Sets a *hard limit* on allowed unfairness | The model is *forbidden* from being unfair beyond the threshold                                         |
+
 
 #### 5.2.2 in-processing method: adversarial learning
 
