@@ -397,59 +397,53 @@ It wants to learn patterns that help it become accurate.
 
 2. The Adversary
 
-Its job: guess the protected attribute (e.g., sex, race) from the predictor’s output or internal representation.
-
+Its job: guess the protected attribute (e.g., sex, race) from the predictor’s output or internal representation. \
 If the adversary succeeds, it means the predictor still encodes bias.
 
-🎯 How training works
+*How training works*
 
 Training happens in two opposing steps (like tug-of-war):
 
-Step A: Adversary learns
+- Step A: Adversary learns
 
-It receives the predictor’s internal representation (or predictions).
+    It receives the predictor’s internal representation (or predictions).
 
-If it can correctly infer the protected attribute,
-→ the predictor must still contain biased information.
+    If it can correctly infer the protected attribute,
+    → the predictor must still contain biased information.
 
-Step B: Predictor learns to “fool” the adversary
+- Step B: Predictor learns to “fool” the adversary
 
-The predictor’s loss includes:
+    The predictor’s loss includes:
 
-normal prediction error
-
-minus a term that rewards it for confusing the adversary
+    - normal prediction error
+    - **minus** a term that rewards it for confusing the adversary
 
 So the predictor is trained to:
 
-“Be good at predicting the real label,
-but also hide any information that reveals the protected attribute.”
+“Be good at predicting the real label, but also hide any information that reveals the protected attribute.”
 
-🧠 Intuition
+*Intuition*
 
-If the adversary can detect gender/race → representation is biased.
-
-If the adversary cannot detect gender/race → representation is fairer.
+- If the adversary can detect gender/race → representation is biased.
+- If the adversary cannot detect gender/race → representation is fairer.
 
 Thus:
 
-The adversary pushes the predictor to remove biased signals.
-
-The predictor pushes the adversary to fail.
+- The adversary pushes the predictor to remove biased signals.
+- The predictor pushes the adversary to fail.
 
 This back-and-forth gradually encourages a representation that:
 
-keeps information needed for prediction
+- keeps information needed for prediction
+- removes information about protected attributes
 
-removes information about protected attributes
+*mental picture*
 
-🔍 Tiny mental picture
 [ Predict label Y ]           [ Predict protected attr A ]
        Predictor   <-----vs------->   Adversary
          ↓                                 ↑
   tries to be accurate        tries to expose hidden bias
   AND fool the adversary
-
 
 The predictor and adversary improve by “competing.”
 
