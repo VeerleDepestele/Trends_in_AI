@@ -97,12 +97,12 @@ Het cursusmateriaal is deels in het Nederlands en deels in het Engels.
     download van kaggle (zie ipynb)
     onder Documenten, op Chamilo: german.data, h181.zip, h192.zip (ref. medical_expenditure)
 
-- Les 9
-  - les9_0_introduction.md
-  - notebooks/les9_1_feature_importance_explainability_in_one_line.ipynb
-  - notebooks/les9_2_global_interpretability.ipynb
-  - notebooks/les9_3_local_interpretability.ipynb
-  - notebooks/les9_4_treeSHAP_toy_example.ipynb
+- Les 10
+  - les10_0_introduction.md
+  - notebooks/les10_1_feature_importance_explainability_in_one_line.ipynb
+  - notebooks/les10_2_global_interpretability.ipynb
+  - notebooks/les10_3_local_interpretability.ipynb
+  - notebooks/les10_4_treeSHAP_toy_example.ipynb
 
   referenties:
   Om deze les te maken, gebruikte ik:
