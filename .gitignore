@@ -4,3 +4,7 @@
 .env
 
 data/
+simulated-data-transformed/
+
+notebooks/shared_functions.py
+
