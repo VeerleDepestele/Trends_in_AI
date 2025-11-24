@@ -61,7 +61,7 @@ Also, a large part of model-specific interpreters is devoted to Deep Neural Netw
 
 On the contrary, model-agnostic methods can be applied to any ML model (black box or not) and are applied after the model has been trained (post hoc). These methods rely on analyzing pairs of features' input and output. Usually, model-agnostic explainers are also post-models, sometimes refered to as surrogate models.
 
-Suppose a black box model is too complex to be interpreted. In that case, a workaround solution can be to build a white box model, called the surrogate model, which tries to globally approximate the black-box model as faithfully as possible. It is then easier to interpret the surrogate model. As discussed in section "Lobal interpretability", LIME and SHAP train local surrogate models for each individual prediction to be explained.
+Suppose a black box model is too complex to be interpreted. In that case, a workaround solution can be to build a white box model, called the surrogate model, which tries to globally approximate the black-box model as faithfully as possible. It is then easier to interpret the surrogate model. As discussed in section "Lobal interpretability", LIME and SHAP can train local surrogate models for each individual prediction to be explained.
 
 #### 1.1.4 white box models and black box models
 
