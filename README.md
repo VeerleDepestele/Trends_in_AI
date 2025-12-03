@@ -118,15 +118,13 @@ Het cursusmateriaal is deels in het Nederlands en deels in het Engels.
     publisher={Universit{\'e} Libre de Bruxelles}
     } 
 
-- Les 10
-  - notebooks/les10_0_shapley.md
-  - notebooks/les10_1_lime.md
-  - notebooks/les10_0_saliency_mappings.md
-
 - Les 11
-  - les11_0_AI_act.md
+  - notebooks/les11_0_shapley.ipynb (& notebooks/les11_0_shapley_filled.md)
+  - notebooks/les11_1_lime.ipynb
+  - (notebooks/les11_2_saliency_mappings.ipynb)
 
 - Les 12
-  - les12_0_ethiek_in_AI.md
-  - les12_1_ethiek_in_AI.pptx
-  - les12_2_AI_for_researchers.md
+  - les12_0_AI_act.md
+  - les12_1_ethiek_in_AI.md
+  - les12_2_ethiek_in_AI.pptx
+  - les12_3_AI_for_researchers.md
