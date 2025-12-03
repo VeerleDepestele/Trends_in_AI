@@ -6,9 +6,12 @@ readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
     "aif360[adversarialdebiasing,infairness,reductions]>=0.6.1",
+    "category-encoders>=2.9.0",
+    "fastparquet>=2024.11.0",
     "graphviz>=0.21",
     "imblearn>=0.0",
     "ipykernel>=7.1.0",
+    "ipywidgets>=8.1.8",
     "kagglehub>=0.3.13",
     "lime>=0.2.0.1",
     "numpy==2.2.6",
