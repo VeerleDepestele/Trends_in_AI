@@ -141,8 +141,8 @@ Soms zijn problemen met AI minder duidelijk, minder expliciet, waardoor ze missc
 
 Inleidend verhaal: 
 
-In de jaren 50 bestond het Boston Symphony Orchestra vooral uit mannen. Maar, het is niet dat mannen inherent beter musziek kunnen spelen dan vrouwen.
-Omdat men dat besefte, en die bias woul wegwerken, besloot men bij audities een doek te hangen en de mensen daarachter hun stuk te laten brengen. Op die manier zouden ze niet weten of er een man of een vrouw aan het spelen was, en dus een keuze kunnen maken, zonder beïnvloed te worden door de kennis van het geslacht van de persoon.
+In de jaren 50 bestond het Boston Symphony Orchestra vooral uit mannen. Maar, het is niet dat mannen inherent beter muziek kunnen spelen dan vrouwen.
+Omdat men dat besefte, en die bias wou wegwerken, besloot men bij audities een doek te hangen en de mensen daarachter hun stuk te laten brengen. Op die manier zouden ze niet weten of er een man of een vrouw aan het spelen was, en dus een keuze kunnen maken, zonder beïnvloed te worden door de kennis van het geslacht van de persoon.
 Wat bleek? Mannen en vrouwen dragen andere schoenen. Door het geluid dat de schoenen maakten op het podium, beseften de mensen die de selectie deden dat ze nog altijd wisten wie een man en wie een vrouw was. De oplossing bleek de mensen te vragen om zonder schoenen op het podium te staan.
 
 Waarom dit voorbeeld? Om aan te tonen dat het niet altijd gemakkelijk is om te compenseren voor bias, wanneer die zich in de data bevindt. In het bovenstaande voorbeeld is het gelukt om 'de data' objectief te maken, dat lukt niet altijd.
@@ -152,7 +152,7 @@ Bv. Amazon maakte een AI om te helpen met het proces van het aanwerven van werkn
 Amazon is een zeer groot bedrijf, neemt heel veel werknemers in dienst per jaar. De aanwervingsprocedure is intens (duur): men schrijft een vacature uit, maakt een selectie uit de kandidaturen, voert een eerste gesprek, daarna volgen psychologische testen, wanneer iemand gekozen is, volgt de onboarding,...
 Dus, iemand goed aanwerven is duur, iemand verkeerd aanwerven, is nog duurder (Je moet het hele proces herbeginnen).
 
-Amazon heeft veel historische data, zowel van werknemers die ze aanwierven die goed bleken te zijn als van mensen waarvan ze niet tevreden waren. Daarom trainden ze er een model op. Verwacht werd dathet model het beter zou doen dan de mensen zelf, het model heeft immers meer informatie ter beschikking.
+Amazon heeft veel historische data, zowel van werknemers die ze aanwierven die goed bleken te zijn als van mensen waarvan ze niet tevreden waren. Daarom trainden ze er een model op. Verwacht werd dat het model het beter zou doen dan de mensen zelf, het model heeft immers meer informatie ter beschikking.
 
 Wat bleek? Het AI model selecteerde personen op basis van het geslacht. (ref. explainability)
 
@@ -192,7 +192,7 @@ Grote AI bedrijven gaan contracten aan om nucleaire energie te kunnen gebruiken.
 Wat volgt zijn citaten en bedenkingen uit: ref. https://typeset.io/papers/sustainable-artificial-intelligence-systems-an-energy-34nge2ytet.
 Ik geef het mee om een inschatting te krijgen van de energie-noden voor AI.
 
-"De energieconsumptie voor AI gerelateerde toepassingen is x 300000 sinds 20212. 
+"De energieconsumptie voor AI gerelateerde toepassingen is x 300000 sinds 2012. 
 Dit heeft een grote impact op het milieu: datacenters die AI ondersteunen, zijn verantwoordelijk voor 5-9% van de wereldwijde vraag naar elektriciteit en 2% van alle CO2-uitstoot."
 
 De AI-gemeenschap erkent de noodzaak van energie-efficiënte AI. De focus verschuift van alleen prestaties naar energie-efficiëntie.
