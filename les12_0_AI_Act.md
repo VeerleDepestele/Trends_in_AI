@@ -156,7 +156,7 @@ The AI-Act follows a risk-based approach. The prohibited systems pose an unaccep
 For example: in Hong Kong, a startup developed a system to infer a child's emotions, while learning in school. It could indicate that the student was either sad or happy, frustrated, surprised,...
 
 Such a system will be prohibited in the EU and this already from February 2025 onwards. One of the reasons why such a system should be prohibited is that it can only detect primary emotions and
-a lot of nuances are being missed, especially when we work with different necessities and different cultures. This means that it can go wrong quite easily. For example, a student can actually be very focused while the AI system would interpret the emotion as being angry or uninterested. Another student can have a loud voice and therefore be very expressive and happy, but the system could classify it as being aggressive. These kind of differences/nuances arealso strengthened by cultural differences. 
+a lot of nuances are being missed, especially when we work with different necessities and different cultures. This means that it can go wrong quite easily. For example, a student can actually be very focused while the AI system would interpret the emotion as being angry or uninterested. Another student can have a loud voice and therefore be very expressive and happy, but the system could classify it as being aggressive. These kind of differences/nuances are also strengthened by cultural differences. 
 
 What does the law say about this category in the articles of the AI act? 
 
@@ -177,8 +177,7 @@ There are other categories of prohibited AI systems, an overview:
 All of these systems have in common that they contradict our European values, our values of respect for human dignity, freedom, equality, democracy or rule of law,...
 
 ### "manipulative techniques"
-An example would be a sort of a social chatbot identifying lonely elderly men, so vulnerable people as well and them into paying for some sort of Premium friendship features with
-an AI generated female.
+An example would be a sort of a social chatbot identifying lonely elderly men, so vulnerable people, and trick them into paying for some sort of Premium friendship features with an AI generated female.
 
 ### "predictive policing"
 
@@ -248,15 +247,15 @@ AI systems used for
 Why this is high-risk can be read in recital 57. It can obviously have a very big impact on someone's career, but there might also be historical patterns of discrimination, i.e. the training data could have a lot of bias. We should avoid discrimination and bias and therefore it's a high-risk use case. 
 
 Remark: Some use cases may feel high-risk, but are not high-risk and the other way around.
-For example, a use case built at ML6, where they built a public database with legal judgments. To be GDPR-compliant the decisions needed to be anonymous. Therefore, AI was being used. A lot of people would feel this is a hight-risk use case, while if we check the law it's explicitly exempted, it falls into the category of AI systems intended for the administration of justice.
+For example, a use case built at ML6, where they built a public database with legal judgments. To be GDPR-compliant the decisions needed to be anonymous. Therefore, AI was being used. A lot of people would feel this is a high-risk use case, while if we check the law it's explicitly exempted, it falls into the category of AI systems intended for the administration of justice.
 
 Then what kind of systems are high-risk? Those where it's really an AI system used in court litigation, for example if it would replace a judge, researching and interpreting facts and the law,..., deciding whether claims are founded or not,... 
 
 It is not high risk if it's just for ad administrative activities, for example the analization of judicial decisions.
 
-It can be a tricky exercise to do the high-riskclassification.
+It can be a tricky exercise to do the high-risk classification.
 
-## 5. Specific obligations for high-risk systems.
+## 6. Specific obligations for high-risk systems.
 
 The high-risk AI system are not prohibited. They can be build and developed, but there's an obligation to be compliant with specific obligations.
 
@@ -317,7 +316,7 @@ If the authorities are asking for information you need to demonstrate the confor
 These were the obligations for the provider.
 
 Obligations for the deployer: For certain high-risk AI systems, like for recruitement or education, you need to perform "a fundamental rights impact assessment".
-Wyh? Because those high-risk AI systems have a big impact on people's life. Therefore, it's important to have an assessment before putting the service into use. 
+Why? Because those high-risk AI systems have a big impact on people's life. Therefore, it's important to have an assessment before putting the service into use. 
 
 
 ![les11_AI_Act_seven_requirements](img/les11_AI_Act_seven_requirements.png)
@@ -352,14 +351,14 @@ There are different things, for example:
 
 - You will have a risk management system so you should spend more time thinking about those kind of risk and what the consequences are.
 - Because you're following data governance best practice, you should use a representative data set, so you'd make sure that you have enough pictures of people scratching the heads instead of calling.
-- Someone having a human oversight to double checkthe results.
+- Someone having a human oversight to double check the results.
 - Ensure transparency to understand the system's operation and limitations,  so that the human in the loop does not overrely on the results of the AI system
 - Disposing of technical documentation to know what has been implemented.
 
 
 ## 7. & 8. Transparency: Transparency obligations for providers of GPAI models (GPAI = General Purpose Models), Transparency obligations for chatbots and GenAI applications.
 
-Let's go back in time, when the text for the AI Act was almost ready to be published, generative AI tools like CH GPT and mid Journey just came up and  there were a lot of concerns about the risk
+Let's go back in time, when the text for the AI Act was almost ready to be published, generative AI tools like CHat GPT and mid Journey just came up and  there were a lot of concerns about the risk
 of generative AI, such as deep fake, disinformation, impersonation,...
 
 It has lead to the inclusion of a new chapter chapter "five" about the general purpose AI models, so about generative AI. 
@@ -370,11 +369,9 @@ What is a GPAI model? It's an AI model, for example GPT4, that has been trained 
 GPAI: General Purpose AI.
 
 On top of that, there is - what we call - a GPAI system. A GPAI system is an AI system which has been built based on a GP model, so on top of it. For example, let's say you're building a recruitment tool and you need
-a summary of the questions asked during the interviews and the answers given. Then you could use a GPAI model, like GPT4, which makes that your AI system that your tool is a GPAI syste.
+a summary of the questions asked during the interviews and the answers given. Then you could use a GPAI model, like GPT4, which makes that your AI system that your tool is a GPAI system.
 
 ![les11_AI_Act_transparency_obligations](img/les11_AI_Act_transparency_obligations.png)
-
-![les11_AI_Act_transparency_obligations_2](img/les11_AI_Act_transparency_obligations_2.png)
 
 Obligations for poviders of GPAI models must:
 
@@ -393,17 +390,17 @@ What can you expect?
 
 In theory, you can expect more transparency, for example transparency on which data has been used, but also more reassurance that it respects the the EU copyright law.
 
-Why is transparency so importantfor AI and especially for generative AI?
+Why is transparency so important for AI and especially for generative AI?
 
 Let's take an example: Firefly is a generative AI tool that you can use to create or to edit pictures, like: "a dog in a sweater". When Firefly was released by Adobe, they were very transparent and open
 about the data they used. The advantage of being so transparent is that it creates more trust from the users. They have all the information they need to trust the product and to decide whether to use it or.
 
-Now, what are the obligations so by August 2026 um if you're building a gen AI-tool? It depends on the kind of AI system that you have.
+Now, what are the obligations - by August 2026 - if you're building a gen AI-tool? It depends on the kind of AI system that you have.
 
-- If you have an AI system interacting with humans (a typical example is a chatbot), then you need to inform the user that they are interacting with an AI system, for example by means of an disclaimer before the conversation starts.
+- If you have an AI system interacting with humans (a typical example is a chatbot), then you need to inform the user that they are interacting with an AI system, for example by means of a disclaimer before the conversation starts.
 - If your AI system is generating synthetic content such as audio, image, video and text, you need to make sure that the content is marked as artificially generated
 
-This is  guidance expected from the AI office to know what it means in practice.
+There is guidance expected from the AI office, to know what it means in practice.
 
 If your AI system is being used for generating text, for the specific purpose of informing the public, you need to disclose that the text has been generated - unless it has been reviewed by a human.
 For example if you'regenerating text for press articles, but there is no human in the loop, then you need to to say it has been generated by using AI. If there is a human reviewing it, it's not mandatory.
@@ -418,9 +415,7 @@ If employers are reusing an AI system, like for example Copilot, in the organiza
 It's really important because that makes sure that they understand the opportunities, but also the risk of the technologies and they can make informed decisions.
 
 Remark that there is no specific requirement on the format or on the content of the training. It could be one hour or full day on-site training. With respect to the content, it's important that people know how AI Works, know the risks and the opportunities. 
-People need to be aware of the risk before using a certain technology. It depends on their level of knowledge: 
-- an AI engineer does not need a beginner course,
-- for non-IT people maybe does um some three tips for uh implementing AI literacy in your company
+People need to be aware of the risk before using a certain technology. It depends on their level of knowledge.
 
 For reaching the AI literacy goals in a company,
 
@@ -433,7 +428,7 @@ For reaching the AI literacy goals in a company,
 
 To prepare for compliance with the AI act, a company can start today:
 
-1. be aware of the AI act and its implication in your organizationn
+1. be aware of the AI act and its implication in your organization
 2. list the AI systems used in the organization, for example licences like co-pilot and others,
 3. classify those AI systems,
 4. define the role of your organization in the value chain (provider, deployer, both, other?)
