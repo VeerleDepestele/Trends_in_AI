@@ -120,7 +120,7 @@ should take the economic viability of such a company into account.
 The last measure to support innovation is the so-called "regulatory sandboxes". This is a little bit of a fake concept maybe but it's a concept that we know from the fintech industry where after the crash of 2008, there was a lot of regulation, but there was still some ability needed to test new products and therefore the sandboxes were introduced. It's a kind of mechanism, a tool, where a market participant can collaborate with an authority and where innovative systems can be tested under regulatory oversight. So, it is a kind of temporary experimentation space. 
 
 Let me give you an example: a simple approach would be a series of workshops where authorities and market participants work together to brainstorm on novel ideas in certain areas and where
-they can workwithout having the risk of being fined.
+they can work without having the risk of being fined.
 
 ## 3. There will be different rules for different entities in the value chain. (The rules will depend on the role of your organization.)
 
@@ -133,7 +133,7 @@ AI model is being used.
 
 How will the AI act obligations interact? 
 
-First of all, the developer that wants to developthe HR-AI system is the provider. 
+First of all, the developer that wants to develop the HR-AI system is the provider. 
 The organization that wants to use the system and that buys the system from the provider, is the **deployer**. There is also the **general
 purpose AI model provider** as the big AI model is used for the screening ranking and potentially summarizing specific use case. 
 
