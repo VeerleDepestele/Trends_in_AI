@@ -155,7 +155,7 @@ The AI-Act follows a risk-based approach. The prohibited systems pose an unaccep
 
 For example: in Hong Kong, a startup developed a system to infer a child's emotions, while learning in school. It could indicate that the student was either sad or happy, frustrated, surprised,...
 
-Such a system will be prohibited in the EU and this already from February 25 onwards. One of the reasons why such a system should be prohibited is that it can only detect primary emotions and
+Such a system will be prohibited in the EU and this already from February 2025 onwards. One of the reasons why such a system should be prohibited is that it can only detect primary emotions and
 a lot of nuances are being missed, especially when we work with different necessities and different cultures. This means that it can go wrong quite easily. For example, a student can actually be very focused while the AI system would interpret the emotion as being angry or uninterested. Another student can have a loud voice and therefore be very expressive and happy, but the system could classify it as being aggressive. These kind of differences/nuances arealso strengthened by cultural differences. 
 
 What does the law say about this category in the articles of the AI act? 
