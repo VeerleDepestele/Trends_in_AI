@@ -71,7 +71,7 @@ For example: a smart camera in the food industry checking that packaging meets c
 actually remain unimpacted. For the other categories, we will give more examples throughout the webinar.
 
 There is the risk classification of the AI systems on the one hand. On the other hand, the general purpose AI models and the providers thereof also
-have certain responsibilities. For example: a general purpose AI model is GPT4 by open AI or Llama by Meta. These providers mainly have transparency rules. They have to show how the system work and how it was developed. 
+have certain responsibilities. For example: a general purpose AI model is GPT4 by open AI or Llama by Meta. These providers mainly have transparency rules. They have to show how the system works and how it was developed. 
 
 ![les11_AI_Act_pyramide](img/les11_AI_Act_pyramide.png)
 
