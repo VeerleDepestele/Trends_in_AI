@@ -162,7 +162,7 @@ What does the law say about this category in the articles of the AI act?
 
 The law says quite explicitly AI systems used to detect the emotional state of individuals and situations related to the workplace and education are prohibited. 
 
-Why are these systems prohibited? We read in recital 44 for example that there are concerns about the scientific basis. It has limited reliability, there is a lack of specificity, it can easily miss certain nuances, it can lead to discrimination and it's a very intrusive AI system. Also taking into account the imbalance of power in the context of work oreducation in combination with uh the intrusive nature of the system. therefore it's prohibited.
+Why are these systems prohibited? We read in recital 44 for example that there are concerns about the scientific basis. It has limited reliability, there is a lack of specificity, it can easily miss certain nuances, it can lead to discrimination and it's a very intrusive AI system. Also taking into account the imbalance of power in the context of work or education in combination with the intrusive nature of the system. therefore it's prohibited.
 
 It is only prohibited in the workplace or a situation of work and education. In other situations, it's not prohibited but it's just a high risk system. 
 There's another exception: when it is used for medical or safety reasons, the prohibition is lifted. 
