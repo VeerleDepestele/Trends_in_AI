@@ -44,5 +44,5 @@ Ze gebruiken je data niet om op te trainen, zeggen ze, ref. https://support.goog
 - lmstudio: https://lmstudio.ai/
 - gpt4all: https://www.nomic.ai/gpt4all
 
-- 
+ 
 ![les12_run_llms_locally](img/les12_run_llms_locally.png)
